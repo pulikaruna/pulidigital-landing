@@ -16,15 +16,15 @@
         *::after {
             box-sizing: border-box;
             margin: 0;
-            padding: 0;
+            padding: 0
         }
 
         :root {
             --bg: #080810;
             --surface: #0f0f1a;
             --card: #13131f;
-            --border: rgba(255, 255, 255, 0.07);
-            --border2: rgba(255, 255, 255, 0.13);
+            --border: rgba(255, 255, 255, .07);
+            --border2: rgba(255, 255, 255, .13);
             --text: #eeeef5;
             --muted: #7a7a9a;
             --accent: #00e5ff;
@@ -32,11 +32,11 @@
             --gold: #f4c542;
             --green: #00d68f;
             --display: 'Bebas Neue', sans-serif;
-            --body: 'Outfit', sans-serif;
+            --body: 'Outfit', sans-serif
         }
 
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: smooth
         }
 
         body {
@@ -44,20 +44,19 @@
             color: var(--text);
             font-family: var(--body);
             overflow-x: hidden;
-            cursor: none;
+            cursor: none
         }
 
         a {
             text-decoration: none;
-            color: inherit;
+            color: inherit
         }
 
         button {
             font-family: var(--body);
-            cursor: none;
+            cursor: none
         }
 
-        /* Cursor */
         .cursor {
             position: fixed;
             width: 12px;
@@ -68,7 +67,7 @@
             z-index: 99999;
             transform: translate(-50%, -50%);
             transition: width .2s, height .2s;
-            mix-blend-mode: exclusion;
+            mix-blend-mode: exclusion
         }
 
         .cursor-ring {
@@ -80,22 +79,21 @@
             pointer-events: none;
             z-index: 99998;
             transform: translate(-50%, -50%);
-            transition: width .3s, height .3s, opacity .3s;
+            transition: width .3s, height .3s, opacity .3s
         }
 
         .cursor.big {
             width: 20px;
             height: 20px;
-            background: #fff;
+            background: #fff
         }
 
         .cursor-ring.big {
             width: 60px;
             height: 60px;
-            opacity: .4;
+            opacity: .4
         }
 
-        /* Grain */
         .grain {
             position: fixed;
             inset: -50%;
@@ -105,7 +103,7 @@
             z-index: 9990;
             opacity: .03;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-            animation: grain .4s steps(1) infinite;
+            animation: grain .4s steps(1) infinite
         }
 
         @keyframes grain {
@@ -125,19 +123,20 @@
                 transform: translate(-.5%, .5%)
             }
         }
-.wk-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;   /* 👈 This makes image fit properly */
-    object-position: center;
-}
-        /* Blobs */
+
+        .wk-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center
+        }
+
         .blobs {
             position: fixed;
             inset: 0;
             pointer-events: none;
             z-index: 0;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .blob {
@@ -145,7 +144,7 @@
             border-radius: 50%;
             filter: blur(120px);
             opacity: .15;
-            animation: drift 12s ease-in-out infinite;
+            animation: drift 12s ease-in-out infinite
         }
 
         .b1 {
@@ -154,7 +153,7 @@
             background: var(--accent2);
             top: -150px;
             left: -150px;
-            animation-duration: 14s;
+            animation-duration: 14s
         }
 
         .b2 {
@@ -164,7 +163,7 @@
             bottom: -150px;
             right: -100px;
             animation-duration: 11s;
-            animation-delay: -5s;
+            animation-delay: -5s
         }
 
         @keyframes drift {
@@ -179,14 +178,12 @@
             }
         }
 
-        /* Layout */
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 48px;
+            padding: 0 48px
         }
 
-        /* Navbar */
         .navbar {
             position: fixed;
             top: 0;
@@ -197,25 +194,25 @@
             align-items: center;
             justify-content: space-between;
             padding: 20px 48px;
-            transition: all .4s;
+            transition: all .4s
         }
 
         .navbar.scrolled {
             background: rgba(8, 8, 16, .92);
             backdrop-filter: blur(20px);
             padding: 13px 48px;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border)
         }
 
         .nav-logo {
             font-family: var(--display);
             font-size: 1.9rem;
-            letter-spacing: 3px;
+            letter-spacing: 3px
         }
 
         .nav-logo em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .nav-back {
@@ -230,12 +227,12 @@
             text-transform: uppercase;
             padding: 10px 22px;
             border-radius: 50px;
-            transition: all .3s;
+            transition: all .3s
         }
 
         .nav-back:hover {
             border-color: var(--accent);
-            color: var(--accent);
+            color: var(--accent)
         }
 
         .nav-enquiry {
@@ -252,21 +249,20 @@
             border-radius: 50px;
             border: none;
             transition: all .3s;
-            box-shadow: 0 0 18px rgba(0, 229, 255, .3);
+            box-shadow: 0 0 18px rgba(0, 229, 255, .3)
         }
 
         .nav-enquiry:hover {
             background: #fff;
-            transform: translateY(-2px);
+            transform: translateY(-2px)
         }
 
         .nav-right {
             display: flex;
             gap: 12px;
-            align-items: center;
+            align-items: center
         }
 
-        /* Sticky Social */
         .sticky-social {
             position: fixed;
             right: 22px;
@@ -275,7 +271,7 @@
             z-index: 990;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 8px
         }
 
         .ss-link {
@@ -291,7 +287,7 @@
             color: var(--muted);
             font-size: .88rem;
             transition: all .3s;
-            position: relative;
+            position: relative
         }
 
         .ss-link::before {
@@ -309,54 +305,53 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity .2s, transform .2s;
-            transform: translateX(6px);
+            transform: translateX(6px)
         }
 
         .ss-link:hover::before {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateX(0)
         }
 
         .ss-link:hover {
-            transform: translateX(-4px);
+            transform: translateX(-4px)
         }
 
         .ss-wa:hover {
             background: #25d366;
             border-color: #25d366;
-            color: #fff;
+            color: #fff
         }
 
         .ss-ig:hover {
             background: linear-gradient(135deg, #f09433, #dc2743);
             border-color: transparent;
-            color: #fff;
+            color: #fff
         }
 
         .ss-fb:hover {
             background: #1877f2;
             border-color: #1877f2;
-            color: #fff;
+            color: #fff
         }
 
         .ss-li:hover {
             background: #0a66c2;
             border-color: #0a66c2;
-            color: #fff;
+            color: #fff
         }
 
         .ss-yt:hover {
             background: #ff0000;
             border-color: #ff0000;
-            color: #fff;
+            color: #fff
         }
 
-        /* Hero Banner */
         .page-hero {
             padding: 160px 0 80px;
             position: relative;
             z-index: 1;
-            text-align: center;
+            text-align: center
         }
 
         .ph-label {
@@ -373,7 +368,7 @@
             padding: 7px 16px;
             border-radius: 50px;
             margin-bottom: 24px;
-            animation: fadeUp .7s .1s both;
+            animation: fadeUp .7s .1s both
         }
 
         .ph-h1 {
@@ -381,13 +376,13 @@
             font-size: clamp(4rem, 9vw, 9rem);
             line-height: .88;
             letter-spacing: 3px;
-            animation: fadeUp .7s .25s both;
+            animation: fadeUp .7s .25s both
         }
 
         .ph-h1 em {
             color: transparent;
             -webkit-text-stroke: 1.5px var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .ph-sub {
@@ -398,7 +393,7 @@
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.7;
+            line-height: 1.7
         }
 
         .ph-count {
@@ -407,21 +402,21 @@
             gap: 40px;
             margin-top: 44px;
             animation: fadeUp .7s .55s both;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
         .ph-stat {
-            text-align: center;
+            text-align: center
         }
 
         .ph-num {
             font-family: var(--display);
             font-size: 2.4rem;
-            color: var(--text);
+            color: var(--text)
         }
 
         .ph-num span {
-            color: var(--accent);
+            color: var(--accent)
         }
 
         .ph-lbl {
@@ -429,7 +424,7 @@
             color: var(--muted);
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-top: 3px;
+            margin-top: 3px
         }
 
         @keyframes fadeUp {
@@ -444,7 +439,6 @@
             }
         }
 
-        /* Filter Bar */
         .filter-bar {
             position: sticky;
             top: 70px;
@@ -453,7 +447,7 @@
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             padding: 16px 0;
-            margin-bottom: 0;
+            margin-bottom: 0
         }
 
         .filter-inner {
@@ -461,7 +455,7 @@
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: center
         }
 
         .f-btn {
@@ -475,14 +469,14 @@
             text-transform: uppercase;
             padding: 9px 20px;
             border-radius: 50px;
-            transition: all .25s;
+            transition: all .25s
         }
 
         .f-btn:hover,
         .f-btn.active {
             background: var(--accent);
             border-color: var(--accent);
-            color: #000;
+            color: #000
         }
 
         .f-count {
@@ -490,38 +484,37 @@
             font-size: .65rem;
             letter-spacing: 1px;
             margin-left: 5px;
-            opacity: .7;
+            opacity: .7
         }
 
-        /* Section Headings */
         .section-block {
             padding: 80px 0 60px;
             position: relative;
-            z-index: 1;
+            z-index: 1
         }
 
         .sb-header {
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 40px
         }
 
         .sb-title {
             font-family: var(--display);
             font-size: clamp(2rem, 4vw, 3.5rem);
-            letter-spacing: 2px;
+            letter-spacing: 2px
         }
 
         .sb-title em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .sb-line {
             flex: 1;
             height: 1px;
-            background: var(--border);
+            background: var(--border)
         }
 
         .sb-count {
@@ -529,14 +522,14 @@
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--muted);
+            color: var(--muted)
         }
 
-        /* ===================== WEB DEV GRID ===================== */
+        /* WEB GRID */
         .grid-web {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 20px
         }
 
         .web-card {
@@ -546,21 +539,21 @@
             overflow: hidden;
             cursor: pointer;
             transition: all .4s;
-            text-decoration: none;
-            color: inherit;
             display: block;
+            text-decoration: none;
+            color: inherit
         }
 
         .web-card:hover {
             transform: translateY(-10px);
             border-color: rgba(0, 229, 255, .3);
-            box-shadow: 0 24px 60px rgba(0, 0, 0, .6);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .6)
         }
 
         .wc-thumb {
             height: 220px;
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .wc-bg {
@@ -570,11 +563,11 @@
             align-items: center;
             justify-content: center;
             font-size: 3rem;
-            transition: transform .6s cubic-bezier(.25, .8, .25, 1);
+            transition: transform .6s cubic-bezier(.25, .8, .25, 1)
         }
 
         .web-card:hover .wc-bg {
-            transform: scale(1.12);
+            transform: scale(1.12)
         }
 
         .wc-overlay {
@@ -586,11 +579,11 @@
             align-items: center;
             justify-content: center;
             opacity: 0;
-            transition: opacity .3s;
+            transition: opacity .3s
         }
 
         .web-card:hover .wc-overlay {
-            opacity: 1;
+            opacity: 1
         }
 
         .wc-view {
@@ -607,14 +600,16 @@
             border-radius: 50px;
             transform: translateY(10px);
             transition: transform .3s;
+            border: none;
+            cursor: pointer
         }
 
         .web-card:hover .wc-view {
-            transform: translateY(0);
+            transform: translateY(0)
         }
 
         .wc-info {
-            padding: 22px 20px;
+            padding: 22px 20px
         }
 
         .wc-cat {
@@ -623,27 +618,27 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 7px;
+            margin-bottom: 7px
         }
 
         .wc-title {
             font-family: var(--display);
             font-size: 1.2rem;
             letter-spacing: .5px;
-            margin-bottom: 6px;
+            margin-bottom: 6px
         }
 
         .wc-desc {
             font-size: .82rem;
             color: var(--muted);
             line-height: 1.55;
-            margin-bottom: 14px;
+            margin-bottom: 14px
         }
 
         .wc-tags {
             display: flex;
             gap: 6px;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
         .wc-tag {
@@ -653,13 +648,13 @@
             background: rgba(255, 255, 255, .04);
             border: 1px solid var(--border);
             padding: 3px 9px;
-            border-radius: 50px;
+            border-radius: 50px
         }
 
-        /* ===================== DESIGN GRID (Masonry-style) ===================== */
+        /* DESIGN GRID */
         .grid-design {
             columns: 4;
-            column-gap: 16px;
+            column-gap: 16px
         }
 
         .design-card {
@@ -673,19 +668,19 @@
             margin-bottom: 16px;
             display: block;
             text-decoration: none;
-            color: inherit;
+            color: inherit
         }
 
         .design-card:hover {
             transform: translateY(-6px) scale(1.01);
             border-color: rgba(0, 229, 255, .3);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, .5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .5)
         }
 
         .dc-thumb {
             width: 100%;
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .dc-thumb-inner {
@@ -693,11 +688,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform .5s cubic-bezier(.25, .8, .25, 1);
+            transition: transform .5s cubic-bezier(.25, .8, .25, 1)
         }
 
         .design-card:hover .dc-thumb-inner {
-            transform: scale(1.05);
+            transform: scale(1.05)
         }
 
         .dc-overlay {
@@ -709,11 +704,11 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 16px;
+            padding: 16px
         }
 
         .design-card:hover .dc-overlay {
-            opacity: 1;
+            opacity: 1
         }
 
         .dc-ov-title {
@@ -721,7 +716,7 @@
             font-size: 1rem;
             letter-spacing: .5px;
             color: #fff;
-            margin-bottom: 4px;
+            margin-bottom: 4px
         }
 
         .dc-ov-cat {
@@ -729,13 +724,12 @@
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--accent);
+            color: var(--accent)
         }
 
-        /* Poster mock styles */
         .poster {
             border-radius: 8px;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .p1 {
@@ -744,7 +738,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.5rem
         }
 
         .p2 {
@@ -753,7 +747,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.5rem
         }
 
         .p3 {
@@ -762,7 +756,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.5rem
         }
 
         .p4 {
@@ -771,7 +765,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.5rem
         }
 
         .p5 {
@@ -780,7 +774,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.5rem
         }
 
         .p6 {
@@ -789,7 +783,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.5rem
         }
 
         .p7 {
@@ -798,7 +792,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.5rem
         }
 
         .p8 {
@@ -807,11 +801,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.5rem
         }
 
         .dc-info {
-            padding: 14px 14px 16px;
+            padding: 14px 14px 16px
         }
 
         .dc-cat-lbl {
@@ -820,21 +814,21 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 5px;
+            margin-bottom: 5px
         }
 
         .dc-name {
             font-family: var(--display);
             font-size: 1rem;
             letter-spacing: .5px;
-            color: var(--text);
+            color: var(--text)
         }
 
-        /* ===================== VIDEO GRID ===================== */
+        /* VIDEO GRID */
         .grid-video {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 20px
         }
 
         .video-card {
@@ -846,19 +840,19 @@
             transition: all .4s;
             display: block;
             text-decoration: none;
-            color: inherit;
+            color: inherit
         }
 
         .video-card:hover {
             transform: translateY(-8px);
             border-color: rgba(0, 229, 255, .25);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, .6);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .6)
         }
 
         .vc-thumb {
             height: 210px;
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .vc-bg {
@@ -868,11 +862,11 @@
             align-items: center;
             justify-content: center;
             font-size: 2.5rem;
-            transition: transform .5s;
+            transition: transform .5s
         }
 
         .video-card:hover .vc-bg {
-            transform: scale(1.1);
+            transform: scale(1.1)
         }
 
         .vc-play {
@@ -880,7 +874,7 @@
             inset: 0;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center
         }
 
         .vc-play-btn {
@@ -894,14 +888,14 @@
             color: #000;
             font-size: 1.2rem;
             transition: all .3s;
-            transform: scale(0.85);
-            opacity: .85;
+            transform: scale(.85);
+            opacity: .85
         }
 
         .video-card:hover .vc-play-btn {
             transform: scale(1);
             opacity: 1;
-            box-shadow: 0 0 30px rgba(0, 229, 255, .6);
+            box-shadow: 0 0 30px rgba(0, 229, 255, .6)
         }
 
         .vc-duration {
@@ -914,7 +908,7 @@
             font-weight: 700;
             padding: 3px 8px;
             border-radius: 4px;
-            letter-spacing: .5px;
+            letter-spacing: .5px
         }
 
         .vc-type {
@@ -929,11 +923,11 @@
             padding: 3px 10px;
             border-radius: 50px;
             letter-spacing: 1px;
-            text-transform: uppercase;
+            text-transform: uppercase
         }
 
         .vc-info {
-            padding: 20px 18px;
+            padding: 20px 18px
         }
 
         .vc-cat {
@@ -942,26 +936,26 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 7px;
+            margin-bottom: 7px
         }
 
         .vc-title {
             font-family: var(--display);
             font-size: 1.15rem;
             letter-spacing: .5px;
-            margin-bottom: 6px;
+            margin-bottom: 6px
         }
 
         .vc-desc {
             font-size: .8rem;
             color: var(--muted);
             line-height: 1.55;
-            margin-bottom: 12px;
+            margin-bottom: 12px
         }
 
         .vc-meta {
             display: flex;
-            gap: 14px;
+            gap: 14px
         }
 
         .vc-badge {
@@ -969,43 +963,42 @@
             color: var(--muted);
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 5px
         }
 
         .vc-badge i {
-            color: var(--accent);
+            color: var(--accent)
         }
 
-        /* Thumb bg variations */
         .vbg1 {
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e)
         }
 
         .vbg2 {
-            background: linear-gradient(135deg, #1a0020, #3d0060, #9900cc);
+            background: linear-gradient(135deg, #1a0020, #3d0060, #9900cc)
         }
 
         .vbg3 {
-            background: linear-gradient(135deg, #001a10, #004d2e, #00cc7a);
+            background: linear-gradient(135deg, #001a10, #004d2e, #00cc7a)
         }
 
         .vbg4 {
-            background: linear-gradient(135deg, #1a0800, #4d2000, #ff6600);
+            background: linear-gradient(135deg, #1a0800, #4d2000, #ff6600)
         }
 
         .vbg5 {
-            background: linear-gradient(135deg, #001220, #003666, #0066cc);
+            background: linear-gradient(135deg, #001220, #003666, #0066cc)
         }
 
         .vbg6 {
-            background: linear-gradient(135deg, #1a0015, #4d003e, #cc0080);
+            background: linear-gradient(135deg, #1a0015, #4d003e, #cc0080)
         }
 
-        /* ===================== MARKETING GRID ===================== */
+        /* MARKETING GRID */
         .grid-marketing {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 20px
         }
 
         .mkt-card {
@@ -1017,19 +1010,19 @@
             transition: all .4s;
             display: block;
             text-decoration: none;
-            color: inherit;
+            color: inherit
         }
 
         .mkt-card:hover {
             transform: translateY(-8px);
             border-color: rgba(0, 229, 255, .25);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, .5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .5)
         }
 
         .mc-thumb {
             height: 200px;
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .mc-bg {
@@ -1039,11 +1032,11 @@
             align-items: center;
             justify-content: center;
             font-size: 2.8rem;
-            transition: transform .5s;
+            transition: transform .5s
         }
 
         .mkt-card:hover .mc-bg {
-            transform: scale(1.1);
+            transform: scale(1.1)
         }
 
         .mc-badge {
@@ -1055,7 +1048,7 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             padding: 4px 10px;
-            border-radius: 50px;
+            border-radius: 50px
         }
 
         .mc-result {
@@ -1068,11 +1061,11 @@
             font-size: .68rem;
             font-weight: 700;
             padding: 4px 10px;
-            border-radius: 50px;
+            border-radius: 50px
         }
 
         .mc-info {
-            padding: 20px 18px;
+            padding: 20px 18px
         }
 
         .mc-cat {
@@ -1081,27 +1074,27 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 7px;
+            margin-bottom: 7px
         }
 
         .mc-title {
             font-family: var(--display);
             font-size: 1.15rem;
             letter-spacing: .5px;
-            margin-bottom: 6px;
+            margin-bottom: 6px
         }
 
         .mc-desc {
             font-size: .8rem;
             color: var(--muted);
             line-height: 1.55;
-            margin-bottom: 12px;
+            margin-bottom: 12px
         }
 
         .mc-kpis {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
+            gap: 8px
         }
 
         .mc-kpi {
@@ -1109,17 +1102,17 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 8px 10px;
-            text-align: center;
+            text-align: center
         }
 
         .mc-kpi-val {
             font-family: var(--display);
             font-size: 1rem;
-            color: var(--text);
+            color: var(--text)
         }
 
         .mc-kpi-val span {
-            color: var(--green);
+            color: var(--green)
         }
 
         .mc-kpi-lbl {
@@ -1127,34 +1120,32 @@
             color: var(--muted);
             text-transform: uppercase;
             letter-spacing: .5px;
-            margin-top: 2px;
+            margin-top: 2px
         }
 
         .mbg1 {
-            background: linear-gradient(135deg, #0a1a00, #1f4d00, #44cc00);
+            background: linear-gradient(135deg, #0a1a00, #1f4d00, #44cc00)
         }
 
         .mbg2 {
-            background: linear-gradient(135deg, #001a2e, #00407a, #0088ff);
+            background: linear-gradient(135deg, #001a2e, #00407a, #0088ff)
         }
 
         .mbg3 {
-            background: linear-gradient(135deg, #1a0a00, #4d2200, #ff8800);
+            background: linear-gradient(135deg, #1a0a00, #4d2200, #ff8800)
         }
 
-        /* Reveal */
         .reveal {
             opacity: 0;
             transform: translateY(28px);
-            transition: opacity .7s ease, transform .7s ease;
+            transition: opacity .7s ease, transform .7s ease
         }
 
         .reveal.in {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0)
         }
 
-        /* CTA strip */
         .cta-strip {
             background: var(--surface);
             border-top: 1px solid var(--border);
@@ -1163,32 +1154,32 @@
             text-align: center;
             position: relative;
             z-index: 1;
-            margin-top: 80px;
+            margin-top: 80px
         }
 
         .cs-h {
             font-family: var(--display);
             font-size: clamp(2rem, 5vw, 4rem);
             letter-spacing: 2px;
-            margin-bottom: 14px;
+            margin-bottom: 14px
         }
 
         .cs-h em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .cs-p {
             color: var(--muted);
             margin-bottom: 32px;
-            font-size: .95rem;
+            font-size: .95rem
         }
 
         .cs-btns {
             display: flex;
             gap: 14px;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
         .btn-a {
@@ -1205,12 +1196,12 @@
             border-radius: 50px;
             border: none;
             transition: all .3s;
-            box-shadow: 0 0 24px rgba(0, 229, 255, .3);
+            box-shadow: 0 0 24px rgba(0, 229, 255, .3)
         }
 
         .btn-a:hover {
             background: #fff;
-            transform: translateY(-3px);
+            transform: translateY(-3px)
         }
 
         .btn-b {
@@ -1224,15 +1215,15 @@
             padding: 14px 32px;
             border-radius: 50px;
             border: 1px solid var(--border2);
-            transition: all .3s;
+            transition: all .3s
         }
 
         .btn-b:hover {
             border-color: var(--accent);
-            color: var(--accent);
+            color: var(--accent)
         }
 
-        /* Modal */
+        /* ENQUIRY MODAL */
         .modal-bg {
             position: fixed;
             inset: 0;
@@ -1245,12 +1236,12 @@
             padding: 20px;
             opacity: 0;
             pointer-events: none;
-            transition: opacity .35s;
+            transition: opacity .35s
         }
 
         .modal-bg.open {
             opacity: 1;
-            pointer-events: all;
+            pointer-events: all
         }
 
         .modal {
@@ -1262,11 +1253,11 @@
             max-width: 500px;
             transform: translateY(24px) scale(.98);
             transition: transform .35s cubic-bezier(.25, .8, .25, 1);
-            position: relative;
+            position: relative
         }
 
         .modal-bg.open .modal {
-            transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1)
         }
 
         .modal-close {
@@ -1284,40 +1275,40 @@
             justify-content: center;
             font-size: .85rem;
             cursor: pointer;
-            transition: all .2s;
+            transition: all .2s
         }
 
         .modal-close:hover {
             background: rgba(255, 255, 255, .1);
-            color: var(--text);
+            color: var(--text)
         }
 
         .m-title {
             font-family: var(--display);
             font-size: 2rem;
             letter-spacing: 1px;
-            margin-bottom: 4px;
+            margin-bottom: 4px
         }
 
         .m-title em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .m-sub {
             color: var(--muted);
             font-size: .85rem;
-            margin-bottom: 28px;
+            margin-bottom: 28px
         }
 
         .f-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 12px
         }
 
         .f-field {
-            margin-bottom: 13px;
+            margin-bottom: 13px
         }
 
         .f-field label {
@@ -1327,7 +1318,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--muted);
-            margin-bottom: 6px;
+            margin-bottom: 6px
         }
 
         .f-field input,
@@ -1342,22 +1333,22 @@
             font-family: var(--body);
             font-size: .88rem;
             outline: none;
-            transition: border-color .2s;
+            transition: border-color .2s
         }
 
         .f-field input:focus,
         .f-field select:focus,
         .f-field textarea:focus {
-            border-color: var(--accent);
+            border-color: var(--accent)
         }
 
         .f-field select option {
-            background: #13131f;
+            background: #13131f
         }
 
         .f-field textarea {
             resize: vertical;
-            min-height: 80px;
+            min-height: 80px
         }
 
         .f-submit {
@@ -1378,20 +1369,19 @@
             align-items: center;
             justify-content: center;
             gap: 9px;
-            box-shadow: 0 0 24px rgba(0, 229, 255, .3);
+            box-shadow: 0 0 24px rgba(0, 229, 255, .3)
         }
 
         .f-submit:hover {
-            background: #fff;
+            background: #fff
         }
 
-        /* Footer */
         footer {
             background: var(--bg);
             border-top: 1px solid var(--border);
             padding: 40px 0 28px;
             position: relative;
-            z-index: 1;
+            z-index: 1
         }
 
         .foot-row {
@@ -1400,34 +1390,34 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
-            margin-bottom: 26px;
+            margin-bottom: 26px
         }
 
         .foot-logo {
             font-family: var(--display);
             font-size: 1.8rem;
-            letter-spacing: 2px;
+            letter-spacing: 2px
         }
 
         .foot-logo em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .foot-nav {
             display: flex;
             gap: 24px;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
         .foot-nav a {
             font-size: .8rem;
             color: var(--muted);
-            transition: color .2s;
+            transition: color .2s
         }
 
         .foot-nav a:hover {
-            color: var(--accent);
+            color: var(--accent)
         }
 
         .foot-copy {
@@ -1435,83 +1425,361 @@
             font-size: .75rem;
             color: var(--muted);
             border-top: 1px solid var(--border);
-            padding-top: 20px;
+            padding-top: 20px
         }
 
         .foot-copy span {
-            color: var(--accent);
+            color: var(--accent)
         }
 
-        /* Responsive */
+        /* ===== IFRAME PREVIEW POPUP ===== */
+        .preview-bg {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .9);
+            backdrop-filter: blur(24px);
+            z-index: 9500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .4s cubic-bezier(.25, .8, .25, 1)
+        }
+
+        .preview-bg.open {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .preview-modal {
+            width: 100%;
+            max-width: 1120px;
+            height: 86vh;
+            background: var(--card);
+            border: 1px solid rgba(0, 229, 255, .22);
+            border-radius: 22px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(32px) scale(.97);
+            transition: transform .4s cubic-bezier(.25, .8, .25, 1);
+            box-shadow: 0 50px 120px rgba(0, 0, 0, .9), 0 0 0 1px rgba(0, 229, 255, .06)
+        }
+
+        .preview-bg.open .preview-modal {
+            transform: translateY(0) scale(1)
+        }
+
+        .preview-topbar {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 13px 18px;
+            background: rgba(255, 255, 255, .025);
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0
+        }
+
+        .preview-dots {
+            display: flex;
+            gap: 7px;
+            flex-shrink: 0
+        }
+
+        .preview-dots span {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%
+        }
+
+        .pd-close-dot {
+            background: #ff5f57;
+            cursor: pointer;
+            transition: opacity .2s
+        }
+
+        .pd-close-dot:hover {
+            opacity: .75
+        }
+
+        .pd-yellow {
+            background: #febc2e
+        }
+
+        .pd-green-dot {
+            background: #28c840
+        }
+
+        .preview-url-bar {
+            flex: 1;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid var(--border2);
+            border-radius: 8px;
+            padding: 7px 14px;
+            font-size: .78rem;
+            color: var(--muted);
+            font-family: monospace;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow: hidden
+        }
+
+        .preview-url-bar i {
+            color: var(--green);
+            font-size: .72rem;
+            flex-shrink: 0
+        }
+
+        .preview-url-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        .preview-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0
+        }
+
+        .pab {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 14px;
+            border-radius: 7px;
+            font-size: .74rem;
+            font-weight: 700;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .2s;
+            border: none;
+            font-family: var(--body)
+        }
+
+        .pab-open {
+            background: var(--accent);
+            color: #000
+        }
+
+        .pab-open:hover {
+            background: #fff
+        }
+
+        .pab-close-btn {
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid var(--border2);
+            color: var(--muted)
+        }
+
+        .pab-close-btn:hover {
+            background: rgba(255, 77, 109, .15);
+            border-color: #ff4d6d;
+            color: #ff4d6d
+        }
+
+        .preview-body {
+            flex: 1;
+            position: relative;
+            overflow: hidden
+        }
+
+        .preview-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block
+        }
+
+        .preview-loader {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--card);
+            gap: 16px;
+            transition: opacity .5s
+        }
+
+        .preview-loader.gone {
+            opacity: 0;
+            pointer-events: none
+        }
+
+        .spin {
+            width: 46px;
+            height: 46px;
+            border: 3px solid rgba(0, 229, 255, .15);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: sp .8s linear infinite
+        }
+
+        @keyframes sp {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .loader-lbl {
+            font-size: .8rem;
+            color: var(--muted);
+            letter-spacing: 1px
+        }
+
+        .preview-blocked {
+            position: absolute;
+            inset: 0;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--card);
+            gap: 16px;
+            text-align: center;
+            padding: 48px
+        }
+
+        .preview-blocked.show {
+            display: flex
+        }
+
+        .blk-icon {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background: rgba(255, 77, 109, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            color: #ff4d6d
+        }
+
+        .blk-title {
+            font-family: var(--display);
+            font-size: 1.7rem;
+            letter-spacing: 1px
+        }
+
+        .blk-desc {
+            font-size: .87rem;
+            color: var(--muted);
+            max-width: 400px;
+            line-height: 1.75
+        }
+
+        .blk-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            font-size: .83rem;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            padding: 12px 28px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all .3s;
+            margin-top: 4px
+        }
+
+        .blk-btn:hover {
+            background: #fff
+        }
+
         @media(max-width:1100px) {
 
             .grid-web,
             .grid-video,
             .grid-marketing {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr)
             }
 
             .grid-design {
-                columns: 3;
+                columns: 3
+            }
+
+            .preview-modal {
+                max-width: 95vw;
+                height: 90vh
             }
         }
 
         @media(max-width:768px) {
             .container {
-                padding: 0 22px;
+                padding: 0 22px
             }
 
             .navbar {
-                padding: 16px 22px;
+                padding: 16px 22px
             }
 
             .navbar.scrolled {
-                padding: 12px 22px;
+                padding: 12px 22px
             }
 
             .grid-web,
             .grid-video,
             .grid-marketing {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .grid-design {
-                columns: 2;
+                columns: 2
             }
 
             .sticky-social {
-                right: 8px;
+                right: 8px
             }
 
             .sticky-social a {
                 width: 36px;
                 height: 36px;
-                font-size: .8rem;
+                font-size: .8rem
             }
 
             .sticky-social a::before {
-                display: none;
+                display: none
             }
 
             body {
-                cursor: auto;
+                cursor: auto
             }
 
             .cursor,
             .cursor-ring {
-                display: none;
+                display: none
             }
 
             .f-row {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .modal {
-                padding: 28px 20px;
+                padding: 28px 20px
             }
 
             .nav-right .nav-back {
-                display: none;
+                display: none
+            }
+
+            .preview-modal {
+                height: 82vh;
+                border-radius: 12px
+            }
+
+            .pab-open span {
+                display: none
             }
         }
     </style>
@@ -1529,7 +1797,7 @@
 
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
-        <a href="index.html" class="nav-logo">KUSHI<em>DIGITAL</em></a>
+        <a href="index.html" class="nav-logo">Puli<em>DIGITAL</em></a>
         <div class="nav-right">
             <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Back to Home</a>
             <button class="nav-enquiry" onclick="openModal()"><i class="fas fa-paper-plane"></i> Get a Quote</button>
@@ -1537,12 +1805,20 @@
     </nav>
 
     <!-- STICKY SOCIAL -->
-    <div class="sticky-social">
-        <a href="#" class="ss-link ss-wa" data-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" class="ss-link ss-ig" data-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="ss-link ss-fb" data-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="ss-link ss-li" data-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="ss-link ss-yt" data-label="YouTube"><i class="fab fa-youtube"></i></a>
+<div class="sticky-social">
+        <a href="https://wa.me/+919703065715" target="_blank" class="ss-wa" data-label="WhatsApp"><i
+                class="fab fa-whatsapp"></i></a>
+        <a href="tel:9703065715" class="ss-call" data-label="+919703065715">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <!-- <a href="https://instagram.com/YOURHANDLE" target="_blank" class="ss-ig" data-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/YOURPAGE" target="_blank" class="ss-fb" data-label="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+        <a href="https://linkedin.com/in/YOURPROFILE" target="_blank" class="ss-li" data-label="LinkedIn"><i
+                class="fab fa-linkedin-in"></i></a>
+        <a href="https://youtube.com/YOURCHANNEL" target="_blank" class="ss-yt" data-label="YouTube"><i
+                class="fab fa-youtube"></i></a> -->
     </div>
 
     <!-- PAGE HERO -->
@@ -1575,18 +1851,12 @@
     <!-- FILTER BAR -->
     <div class="filter-bar">
         <div class="filter-inner">
-            <button class="f-btn active" onclick="scrollTo('section-web',this)">🌐 Web Dev <span
+            <button class="f-btn active" onclick="scrollToSection('section-web',this)">🌐 Web Dev <span
                     class="f-count">06</span></button>
-            <button class="f-btn" onclick="scrollTo('section-design',this)">🎨 Graphic Design <span
-                    class="f-count">08</span></button>
-            <button class="f-btn" onclick="scrollTo('section-video',this)">🎬 Video Editing <span
-                    class="f-count">06</span></button>
-            <button class="f-btn" onclick="scrollTo('section-marketing',this)">📈 Marketing <span
-                    class="f-count">03</span></button>
         </div>
     </div>
 
-    <!-- ===================== WEB DEVELOPMENT ===================== -->
+    <!-- WEB DEVELOPMENT -->
     <section class="section-block" id="section-web">
         <div class="container">
             <div class="sb-header reveal">
@@ -1596,131 +1866,139 @@
             </div>
             <div class="grid-web">
 
-                <a href="project-detail.html" class="web-card reveal">
-                    <div class="wc-thumb">
-                        <div class="wk-bg">
-                            <img src="images/Gemini_Generated_Image_q7oet0q7oet0q7oe.png"
-                                alt="E-Commerce Fashion Store">
-                        </div>
-                        <div class="wc-overlay">
-                            <div class="wc-view"><i class="fas fa-external-link-alt"></i>View Project</div>
-                        </div>
-                    </div>
-                    <div class="wc-info">
-                        <div class="wc-cat">E-Commerce</div>
-                        <div class="wc-title">Fashion Store Website</div>
-                        <p class="wc-desc">Full responsive store with cart, payment gateway & CMS backend for a
-                            Hyderabad fashion brand.</p>
-                        <div class="wc-tags"><span class="wc-tag">HTML/CSS</span><span
-                                class="wc-tag">JavaScript</span><span class="wc-tag">Razorpay</span></div>
-                    </div>
-                </a>
 
-                <a href="project-detail.html" class="web-card reveal">
+
+                <!-- Card 2 — opens in popup -->
+                <div class="web-card reveal" onclick="openPreview('https://thepunitshah.com/','thepunitshah.com')">
                     <div class="wc-thumb">
                         <div class="wk-bg">
-                            <img src="images/Gemini_Generated_Image_pwj042pwj042pwj0.png"
-                                alt="E-Commerce Fashion Store">
+                            <img src="images/Screenshot 2026-02-27 104245.png" alt="Business & Personal Brand Website">
                         </div>
                         <div class="wc-overlay">
-                            <div class="wc-view"><i class="fas fa-external-link-alt"></i>View Project</div>
+                            <div class="wc-view"><i class="fas fa-eye"></i> View Project</div>
                         </div>
                     </div>
                     <div class="wc-info">
-                        <div class="wc-cat">Healthcare</div>
-                        <div class="wc-title">Clinic Booking Portal</div>
-                        <p class="wc-desc">Online appointment booking system with doctor profiles, time-slots &
-                            automated SMS reminders.</p>
-                        <div class="wc-tags"><span class="wc-tag">WordPress</span><span class="wc-tag">PHP</span><span
+                        <div class="wc-cat">Web Development</div>
+                        <div class="wc-title">Business &amp; Personal Brand Website</div>
+                        <p class="wc-desc">Responsive website featuring ventures showcase, insights/blog system, media
+                            highlights and contact functionality.</p>
+                        <div class="wc-tags"><span class="wc-tag">Angular</span><span class="wc-tag">PHP</span><span
                                 class="wc-tag">SMS API</span></div>
                     </div>
-                </a>
+                </div>
 
-                <a href="project-detail.html" class="web-card reveal">
+                <!-- Card 3 — opens in popup -->
+                <div class="web-card reveal" onclick="openPreview('https://hnh.ug/','hnh.ug')">
                     <div class="wc-thumb">
                         <div class="wk-bg">
-                            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                alt="E-Commerce Fashion Store">
+                            <img src="images/Screenshot 2026-02-27 104326.png" alt="Health & Wellness Product Website">
                         </div>
                         <div class="wc-overlay">
-                            <div class="wc-view"><i class="fas fa-external-link-alt"></i>View Project</div>
+                            <div class="wc-view"><i class="fas fa-eye"></i> View Project</div>
                         </div>
                     </div>
                     <div class="wc-info">
-                        <div class="wc-cat">Education</div>
-                        <div class="wc-title">EdTech Landing Page</div>
-                        <p class="wc-desc">High-converting landing page for an online coaching institute with lead
-                            capture & WhatsApp CTA.</p>
+                        <div class="wc-cat">Web Development</div>
+                        <div class="wc-title">Health &amp; Wellness Product Website</div>
+                        <p class="wc-desc">Fully responsive website with product catalog, online ordering, wellness
+                            information, and customer contact integration.</p>
                         <div class="wc-tags"><span class="wc-tag">HTML/CSS</span><span class="wc-tag">JS</span><span
                                 class="wc-tag">Google Ads</span></div>
                     </div>
-                </a>
+                </div>
 
-                <a href="project-detail.html" class="web-card reveal">
+
+                <!-- Card 1 — opens in popup -->
+                <div class="web-card reveal" onclick="openPreview('https://cityonetours.com/','cityonetours.com')">
                     <div class="wc-thumb">
                         <div class="wk-bg">
-                            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                alt="E-Commerce Fashion Store">
+                            <img src="images/Screenshot 2026-02-27 104210.png" alt="Travel & Tourism Booking Website">
                         </div>
                         <div class="wc-overlay">
-                            <div class="wc-view"><i class="fas fa-external-link-alt"></i>View Project</div>
+                            <div class="wc-view"><i class="fas fa-eye"></i> View Project</div>
                         </div>
                     </div>
                     <div class="wc-info">
-                        <div class="wc-cat">Food & Beverage</div>
-                        <div class="wc-title">Restaurant Website</div>
-                        <p class="wc-desc">Elegant restaurant site with online menu, table reservation & Swiggy/Zomato
-                            integration links.</p>
+                        <div class="wc-cat">Web Development</div>
+                        <div class="wc-title">Travel &amp; Tourism Booking Website</div>
+                        <p class="wc-desc">Full responsive website with tour packages, visa services, destination
+                            listings, inquiry forms, and CMS-managed content.</p>
+                        <div class="wc-tags"><span class="wc-tag">HTML/CSS</span><span
+                                class="wc-tag">JavaScript</span><span class="wc-tag">Razorpay</span></div>
+                    </div>
+                </div>
+                <!-- Card 4 — placeholder (no live URL, goes to detail page) -->
+                <div class="web-card reveal" onclick="openPreview('https://khotels.ug/','khotels.ug')">
+                    <div class="wc-thumb">
+                        <div class="wk-bg">
+                            <img src="images/Screenshot 2026-02-27 104426.png" alt="Hotel Website">
+                        </div>
+                        <div class="wc-overlay">
+                            <div class="wc-view"><i class="fas fa-eye"></i> View Project</div>
+                        </div>
+                    </div>
+                    <div class="wc-info">
+                        <div class="wc-cat">Hospitality</div>
+                        <div class="wc-title">Hotel &amp; Hospitality Website</div>
+                        <p class="wc-desc">Fully responsive hotel website with room listings, amenities showcase,
+                            event/conference information, and online booking inquiry integration.</p>
                         <div class="wc-tags"><span class="wc-tag">WordPress</span><span
                                 class="wc-tag">WooCommerce</span></div>
                     </div>
-                </a>
+                </div>
 
-                <a href="project-detail.html" class="web-card reveal">
+                <!-- Card 5 -->
+                <div class="web-card reveal" onclick="openPreview('https://overseasfootwear.com/home')">
+
                     <div class="wc-thumb">
                         <div class="wk-bg">
-                            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                alt="E-Commerce Fashion Store">
+                            <img src="images/Screenshot 2026-02-27 121645.png" alt="Footwear Website">
                         </div>
                         <div class="wc-overlay">
-                            <div class="wc-view"><i class="fas fa-external-link-alt"></i>View Project</div>
+                            <div class="wc-view"><i class="fas fa-eye"></i> View Project</div>
                         </div>
                     </div>
                     <div class="wc-info">
-                        <div class="wc-cat">Real Estate</div>
-                        <div class="wc-title">Property Listing Site</div>
-                        <p class="wc-desc">Property search & filter website with map integration, virtual tour embeds &
-                            lead forms.</p>
-                        <div class="wc-tags"><span class="wc-tag">React</span><span class="wc-tag">Google Maps</span>
-                        </div>
+                        <div class="wc-cat">Footwear</div>
+                        <div class="wc-title">Footwear Website</div>
+                        <p class="wc-desc">Elegant footwear site with online product listings, size guides &amp;
+                            Swiggy/Zomato integration links.</p>
+                        <div class="wc-tags"><span class="wc-tag">WordPress</span><span
+                                class="wc-tag">WooCommerce</span></div>
                     </div>
-                </a>
+                </div>
 
-                <a href="project-detail.html" class="web-card reveal">
+
+
+                                <!-- Card 6 -->
+                <div class="web-card reveal" onclick="openPreview('https://retrofitgym.com/')">
+
                     <div class="wc-thumb">
                         <div class="wk-bg">
-                            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                alt="E-Commerce Fashion Store">
+                            <img src="images/Screenshot 2026-02-27 122024.png" alt="Footwear Website">
                         </div>
                         <div class="wc-overlay">
-                            <div class="wc-view"><i class="fas fa-external-link-alt"></i>View Project</div>
+                            <div class="wc-view"><i class="fas fa-eye"></i> View Project</div>
                         </div>
                     </div>
                     <div class="wc-info">
-                        <div class="wc-cat">Corporate</div>
-                        <div class="wc-title">IT Company Website</div>
-                        <p class="wc-desc">Professional multi-page corporate site with service pages, team section &
-                            contact portal.</p>
-                        <div class="wc-tags"><span class="wc-tag">HTML/CSS</span><span
-                                class="wc-tag">JavaScript</span><span class="wc-tag">GSAP</span></div>
+                        <div class="wc-cat">GYM</div>
+                        <div class="wc-title">GYM Website</div>
+                        <p class="wc-desc">Elegant GYM site with online product listings, size guides &amp;
+                            Swiggy/Zomato integration links.</p>
+                        <div class="wc-tags"><span class="wc-tag">WordPress</span><span
+                                class="wc-tag">WooCommerce</span></div>
                     </div>
-                </a>
+                </div>
 
+
+                
             </div>
         </div>
     </section>
 
-    <!-- ===================== GRAPHIC DESIGN ===================== -->
+    <!-- GRAPHIC DESIGN -->
     <section class="section-block" id="section-design"
         style="background:var(--surface);padding-top:80px;padding-bottom:80px;">
         <div class="container">
@@ -1729,15 +2007,12 @@
                 <div class="sb-line"></div>
                 <span class="sb-count">08 Posters</span>
             </div>
-            <!-- Masonry / Column Layout -->
             <div class="grid-design">
-
                 <a href="graphic-design.html" class="design-card reveal">
                     <div class="dc-thumb">
-                        <div class="wk-bg">
-                            <img src="https://www.shutterstock.com/image-photo/sun-sets-behind-mountain-ranges-600nw-2479236003.jpg"
-                                alt="E-Commerce Fashion Store">
-                        </div>
+                        <div class="wk-bg"><img
+                                src="https://www.shutterstock.com/image-photo/sun-sets-behind-mountain-ranges-600nw-2479236003.jpg"
+                                alt="Nike Launch Poster"></div>
                         <div class="dc-overlay">
                             <div class="dc-ov-title">Nike Launch Poster</div>
                             <div class="dc-ov-cat">Brand Campaign</div>
@@ -1748,7 +2023,6 @@
                         <div class="dc-name">Nike Product Launch</div>
                     </div>
                 </a>
-
                 <a href="graphic-design.html" class="design-card reveal">
                     <div class="dc-thumb">
                         <div class="dc-thumb-inner p2 poster"><span>💄</span></div>
@@ -1762,7 +2036,6 @@
                         <div class="dc-name">Glamour Beauty Campaign</div>
                     </div>
                 </a>
-
                 <a href="graphic-design.html" class="design-card reveal">
                     <div class="dc-thumb">
                         <div class="dc-thumb-inner p3 poster"><span>🌿</span></div>
@@ -1776,7 +2049,6 @@
                         <div class="dc-name">EcoGreen Brand Identity</div>
                     </div>
                 </a>
-
                 <a href="graphic-design.html" class="design-card reveal">
                     <div class="dc-thumb">
                         <div class="dc-thumb-inner p4 poster"><span>☕</span></div>
@@ -1790,7 +2062,6 @@
                         <div class="dc-name">Café Brew Co. Menu Poster</div>
                     </div>
                 </a>
-
                 <a href="graphic-design.html" class="design-card reveal">
                     <div class="dc-thumb">
                         <div class="dc-thumb-inner p5 poster"><span>🎵</span></div>
@@ -1804,7 +2075,6 @@
                         <div class="dc-name">Neon Music Festival 2024</div>
                     </div>
                 </a>
-
                 <a href="graphic-design.html" class="design-card reveal">
                     <div class="dc-thumb">
                         <div class="dc-thumb-inner p6 poster"><span>🏋️</span></div>
@@ -1818,7 +2088,6 @@
                         <div class="dc-name">Iron Fit Gym Campaign</div>
                     </div>
                 </a>
-
                 <a href="graphic-design.html" class="design-card reveal">
                     <div class="dc-thumb">
                         <div class="dc-thumb-inner p7 poster"><span>🛒</span></div>
@@ -1832,7 +2101,6 @@
                         <div class="dc-name">Big Sale Day Campaign</div>
                     </div>
                 </a>
-
                 <a href="graphic-design.html" class="design-card reveal">
                     <div class="dc-thumb">
                         <div class="dc-thumb-inner p8 poster"><span>🍔</span></div>
@@ -1846,7 +2114,6 @@
                         <div class="dc-name">Burger Joint Social Post</div>
                     </div>
                 </a>
-
             </div>
             <div style="text-align:center;margin-top:36px;">
                 <a href="graphic-design.html" class="btn-a" style="display:inline-flex;"><i class="fas fa-images"></i>
@@ -1855,7 +2122,7 @@
         </div>
     </section>
 
-    <!-- ===================== VIDEO EDITING ===================== -->
+    <!-- VIDEO EDITING -->
     <section class="section-block" id="section-video">
         <div class="container">
             <div class="sb-header reveal">
@@ -1864,7 +2131,6 @@
                 <span class="sb-count">06 Videos</span>
             </div>
             <div class="grid-video">
-
                 <a href="video-editing.html" class="video-card reveal">
                     <div class="vc-thumb">
                         <div class="vc-bg vbg1">🛍️</div>
@@ -1884,7 +2150,6 @@
                                     class="fas fa-magic"></i>Motion FX</span></div>
                     </div>
                 </a>
-
                 <a href="video-editing.html" class="video-card reveal">
                     <div class="vc-thumb">
                         <div class="vc-bg vbg2">🎓</div>
@@ -1904,7 +2169,6 @@
                                     class="fas fa-closed-captioning"></i>Subtitles</span></div>
                     </div>
                 </a>
-
                 <a href="video-editing.html" class="video-card reveal">
                     <div class="vc-thumb">
                         <div class="vc-bg vbg3">🍽️</div>
@@ -1924,7 +2188,6 @@
                                     class="fas fa-music"></i>Trending</span></div>
                     </div>
                 </a>
-
                 <a href="video-editing.html" class="video-card reveal">
                     <div class="vc-thumb">
                         <div class="vc-bg vbg4">🏗️</div>
@@ -1944,7 +2207,6 @@
                                     class="fas fa-volume-up"></i>Voice-over</span></div>
                     </div>
                 </a>
-
                 <a href="video-editing.html" class="video-card reveal">
                     <div class="vc-thumb">
                         <div class="vc-bg vbg5">📱</div>
@@ -1964,7 +2226,6 @@
                                     class="fas fa-chart-line"></i>High CTR</span></div>
                     </div>
                 </a>
-
                 <a href="video-editing.html" class="video-card reveal">
                     <div class="vc-thumb">
                         <div class="vc-bg vbg6">💅</div>
@@ -1984,7 +2245,6 @@
                                 class="vc-badge"><i class="fas fa-magic"></i>Motion FX</span></div>
                     </div>
                 </a>
-
             </div>
             <div style="text-align:center;margin-top:36px;">
                 <a href="video-editing.html" class="btn-a" style="display:inline-flex;"><i
@@ -1993,7 +2253,7 @@
         </div>
     </section>
 
-    <!-- ===================== MARKETING ===================== -->
+    <!-- MARKETING -->
     <section class="section-block" id="section-marketing"
         style="background:var(--surface);padding-top:80px;padding-bottom:80px;">
         <div class="container">
@@ -2003,7 +2263,6 @@
                 <span class="sb-count">03 Campaigns</span>
             </div>
             <div class="grid-marketing">
-
                 <a href="project-detail.html" class="mkt-card reveal">
                     <div class="mc-thumb">
                         <div class="mc-bg mbg1">📊</div>
@@ -2033,7 +2292,6 @@
                         </div>
                     </div>
                 </a>
-
                 <a href="project-detail.html" class="mkt-card reveal">
                     <div class="mc-thumb">
                         <div class="mc-bg mbg2">🔍</div>
@@ -2053,7 +2311,7 @@
                                 <div class="mc-kpi-lbl">Leads</div>
                             </div>
                             <div class="mc-kpi">
-                                <div class="mc-kpi-val">₹180<span></span></div>
+                                <div class="mc-kpi-val">₹180</div>
                                 <div class="mc-kpi-lbl">Cost/Lead</div>
                             </div>
                             <div class="mc-kpi">
@@ -2063,7 +2321,6 @@
                         </div>
                     </div>
                 </a>
-
                 <a href="project-detail.html" class="mkt-card reveal">
                     <div class="mc-thumb">
                         <div class="mc-bg mbg3">📱</div>
@@ -2093,7 +2350,6 @@
                         </div>
                     </div>
                 </a>
-
             </div>
         </div>
     </section>
@@ -2114,7 +2370,7 @@
     <footer>
         <div class="container">
             <div class="foot-row">
-                <div class="foot-logo">YOUR<em>NAME</em></div>
+                <div class="foot-logo">PULI<em>Digital</em></div>
                 <nav class="foot-nav">
                     <a href="index.html">Home</a>
                     <a href="works.html">Works</a>
@@ -2123,77 +2379,233 @@
                     <a href="#" onclick="openModal();return false">Enquiry</a>
                 </nav>
             </div>
-            <div class="foot-copy">© 2025 YOURNAME — All rights reserved. <span>♥</span></div>
+            <div class="foot-copy">© 2025 PULI DIGITAL — All rights reserved. <span>♥</span></div>
         </div>
     </footer>
 
-    <!-- MODAL -->
+    <!-- ENQUIRY MODAL -->
     <div class="modal-bg" id="modalBg" onclick="overlayClick(event)">
         <div class="modal">
-            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+
             <div class="m-title">START A <em>PROJECT</em></div>
-            <p class="m-sub">Fill in details — I'll reply within 24 hours. 🚀</p>
-            <div class="f-row">
-                <div class="f-field"><label>Name</label><input type="text" placeholder="Your name" /></div>
-                <div class="f-field"><label>Phone</label><input type="tel" placeholder="+91 99999 99999" /></div>
+            <p class="m-sub">Fill in the details below — I'll reply within 24 hours. 🚀</p>
+
+            <!-- Web3Forms Form Start -->
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <!-- Your Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="30cfc384-8fe4-4c7a-9858-01085571935d">
+
+                <div class="form-row2">
+                    <div class="f-field">
+                        <label>Your Name</label>
+                        <input type="text" name="name" placeholder="e.g. Ravi Kumar" required />
+                    </div>
+
+                    <div class="f-field">
+                        <label>Phone / WhatsApp</label>
+                        <input type="tel" name="phone" placeholder="+91 99999 99999" required />
+                    </div>
+                </div>
+
+                <div class="f-field">
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="hello@youremail.com" required />
+                </div>
+
+                <div class="f-field">
+                    <label>Service Required</label>
+                    <select name="service" required>
+                        <option value="">Select a service...</option>
+                        <option>Web Development</option>
+                        <option>Graphic Design</option>
+                        <option>Video Editing</option>
+                        <option>Digital Marketing / Ads</option>
+                        <option>Social Media Management</option>
+                        <option>Complete Package (All Services)</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="f-field">
+                    <label>Project Details</label>
+                    <textarea name="message"
+                        placeholder="Tell me about your project — what you need, timeline, budget, etc."
+                        required></textarea>
+                </div>
+
+                <!-- Optional: Redirect After Submit -->
+                <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html">
+
+                <button type="submit" class="f-submit">
+                    <i class="fas fa-paper-plane"></i> Send My Enquiry
+                </button>
+
+            </form>
+            <!-- Web3Forms Form End -->
+
+        </div>
+    </div>
+    <!-- ===== IFRAME PREVIEW POPUP ===== -->
+    <div class="preview-bg" id="previewBg">
+        <div class="preview-modal">
+            <div class="preview-topbar">
+                <div class="preview-dots">
+                    <span class="pd-close-dot" onclick="closePreview()" title="Close"></span>
+                    <span class="pd-yellow"></span>
+                    <span class="pd-green-dot"></span>
+                </div>
+                <div class="preview-url-bar">
+                    <i class="fas fa-lock"></i>
+                    <span class="preview-url-text" id="previewUrl">Loading…</span>
+                </div>
+                <div class="preview-actions">
+                    <button class="pab pab-open" onclick="openInNewTab()">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Open Tab</span>
+                    </button>
+                    <button class="pab pab-close-btn" onclick="closePreview()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
             </div>
-            <div class="f-field"><label>Email</label><input type="email" placeholder="you@email.com" /></div>
-            <div class="f-field"><label>Service</label><select>
-                    <option value="">Select...</option>
-                    <option>Web Development</option>
-                    <option>Graphic Design</option>
-                    <option>Video Editing</option>
-                    <option>Digital Marketing</option>
-                    <option>Social Media</option>
-                    <option>Full Package</option>
-                </select></div>
-            <div class="f-field"><label>Project Details</label><textarea
-                    placeholder="Tell me about your project..."></textarea></div>
-            <button class="f-submit" id="submitBtn" onclick="submitEnquiry()"><i class="fas fa-paper-plane"></i>Send
-                Enquiry</button>
+            <div class="preview-body">
+                <div class="preview-loader" id="previewLoader">
+                    <div class="spin"></div>
+                    <div class="loader-lbl">Loading website preview…</div>
+                </div>
+                <div class="preview-blocked" id="previewBlocked">
+                    <div class="blk-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="blk-title">Preview Restricted</div>
+                    <p class="blk-desc">This website's security settings prevent it from being embedded. Open it
+                        directly to view the full project.</p>
+                    <button class="blk-btn" onclick="openInNewTab()"><i class="fas fa-external-link-alt"></i> Open
+                        Website</button>
+                </div>
+                <iframe id="previewFrame" src="" title="Project Preview"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation-by-user-activation"></iframe>
+            </div>
         </div>
     </div>
 
     <script>
-        /* Cursor */
+        /* CURSOR */
         const cur = document.getElementById('cur'), curR = document.getElementById('curRing');
         let cx = 0, cy = 0, rx = 0, ry = 0;
-        document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; cur.style.left = cx + 'px'; cur.style.top = cy + 'px'; });
-        (function a() { rx += (cx - rx) * .12; ry += (cy - ry) * .12; curR.style.left = rx + 'px'; curR.style.top = ry + 'px'; requestAnimationFrame(a); })();
+        document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; cur.style.left = cx + 'px'; cur.style.top = cy + 'px' });
+        (function a() { rx += (cx - rx) * .12; ry += (cy - ry) * .12; curR.style.left = rx + 'px'; curR.style.top = ry + 'px'; requestAnimationFrame(a) })();
         document.querySelectorAll('a,button,.web-card,.design-card,.video-card,.mkt-card').forEach(el => {
-            el.addEventListener('mouseenter', () => { cur.classList.add('big'); curR.classList.add('big'); });
-            el.addEventListener('mouseleave', () => { cur.classList.remove('big'); curR.classList.remove('big'); });
+            el.addEventListener('mouseenter', () => { cur.classList.add('big'); curR.classList.add('big') });
+            el.addEventListener('mouseleave', () => { cur.classList.remove('big'); curR.classList.remove('big') });
         });
 
-        /* Navbar */
+        /* NAVBAR */
         const nav = document.getElementById('navbar');
         window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
 
-        /* Scroll reveal */
+        /* SCROLL REVEAL */
         const obs = new IntersectionObserver((entries) => {
-            entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 70); obs.unobserve(e.target); } });
+            entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 70); obs.unobserve(e.target) } });
         }, { threshold: .08 });
         document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-        /* Filter scroll */
-        function scrollTo(id, btn) {
+        /* FILTER SCROLL */
+        function scrollToSection(id, btn) {
             document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const el = document.getElementById(id);
-            if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 120; window.scrollTo({ top: y, behavior: 'smooth' }); }
+            if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 120; window.scrollTo({ top: y, behavior: 'smooth' }) }
         }
 
-        /* Modal */
-        function openModal() { document.getElementById('modalBg').classList.add('open'); document.body.style.overflow = 'hidden'; }
-        function closeModal() { document.getElementById('modalBg').classList.remove('open'); document.body.style.overflow = ''; }
-        function overlayClick(e) { if (e.target === document.getElementById('modalBg')) closeModal(); }
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+        /* ENQUIRY MODAL */
+        function openModal() { document.getElementById('modalBg').classList.add('open'); document.body.style.overflow = 'hidden' }
+        function closeModal() { document.getElementById('modalBg').classList.remove('open'); document.body.style.overflow = '' }
+        function overlayClick(e) { if (e.target === document.getElementById('modalBg')) closeModal() }
         function submitEnquiry() {
             const btn = document.getElementById('submitBtn');
             btn.innerHTML = '<i class="fas fa-check"></i> Sent! Replying within 24hrs ✓';
             btn.style.background = '#00d68f';
-            setTimeout(() => { closeModal(); btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Enquiry'; btn.style.background = ''; }, 2800);
+            setTimeout(() => { closeModal(); btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Enquiry'; btn.style.background = '' }, 2800);
         }
+
+        /* ===== IFRAME PREVIEW POPUP ===== */
+        let previewUrl = '';
+        let loadTimer = null;
+
+        function openPreview(url, display) {
+            previewUrl = url;
+            const bg = document.getElementById('previewBg');
+            const frame = document.getElementById('previewFrame');
+            const loader = document.getElementById('previewLoader');
+            const blocked = document.getElementById('previewBlocked');
+            const urlEl = document.getElementById('previewUrl');
+
+            // Reset state
+            loader.classList.remove('gone');
+            blocked.classList.remove('show');
+            frame.src = '';
+            urlEl.textContent = display || url;
+            if (loadTimer) clearTimeout(loadTimer);
+
+            bg.classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            setTimeout(() => {
+                frame.src = url;
+
+                frame.onload = () => {
+                    setTimeout(() => {
+                        loader.classList.add('gone');
+                        try {
+                            const doc = frame.contentDocument || frame.contentWindow.document;
+                            if (!doc || doc.body.innerHTML.trim() === '') blocked.classList.add('show');
+                        } catch (e) { /* cross-origin loaded fine */ }
+                    }, 600);
+                };
+
+                frame.onerror = () => {
+                    loader.classList.add('gone');
+                    blocked.classList.add('show');
+                };
+
+                // Hard timeout 10s
+                loadTimer = setTimeout(() => {
+                    if (!loader.classList.contains('gone')) {
+                        loader.classList.add('gone');
+                        try {
+                            const doc = frame.contentDocument || frame.contentWindow.document;
+                            if (!doc || doc.body.innerHTML.trim() === '') blocked.classList.add('show');
+                        } catch (e) { /* cross-origin loaded fine */ }
+                    }
+                }, 10000);
+            }, 100);
+        }
+
+        function closePreview() {
+            const bg = document.getElementById('previewBg');
+            const frame = document.getElementById('previewFrame');
+            bg.classList.remove('open');
+            document.body.style.overflow = '';
+            if (loadTimer) clearTimeout(loadTimer);
+            setTimeout(() => { frame.src = '' }, 420);
+        }
+
+        function openInNewTab() {
+            if (previewUrl) window.open(previewUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // Backdrop click
+        document.getElementById('previewBg').addEventListener('click', function (e) {
+            if (e.target === this) closePreview();
+        });
+
+        // ESC key
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') { closeModal(); closePreview() }
+        });
     </script>
 </body>
 

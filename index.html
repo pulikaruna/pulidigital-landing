@@ -11,23 +11,20 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
-        /* ===================================================
-   ROOT & RESET
-=================================================== */
         *,
         *::before,
         *::after {
             box-sizing: border-box;
             margin: 0;
-            padding: 0;
+            padding: 0
         }
 
         :root {
             --bg: #080810;
             --surface: #0f0f1a;
             --card: #13131f;
-            --border: rgba(255, 255, 255, 0.07);
-            --border2: rgba(255, 255, 255, 0.12);
+            --border: rgba(255, 255, 255, .07);
+            --border2: rgba(255, 255, 255, .12);
             --text: #eeeef5;
             --muted: #7a7a9a;
             --accent: #00e5ff;
@@ -38,11 +35,11 @@
             --display: 'Bebas Neue', sans-serif;
             --body: 'Outfit', sans-serif;
             --rmd: 16px;
-            --rlg: 24px;
+            --rlg: 24px
         }
 
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: smooth
         }
 
         body {
@@ -51,27 +48,24 @@
             font-family: var(--body);
             line-height: 1.6;
             overflow-x: hidden;
-            cursor: none;
+            cursor: none
         }
 
         a {
             text-decoration: none;
-            color: inherit;
+            color: inherit
         }
 
         img {
             display: block;
-            max-width: 100%;
+            max-width: 100%
         }
 
         button {
             font-family: var(--body);
-            cursor: none;
+            cursor: none
         }
 
-        /* ===================================================
-   CUSTOM CURSOR
-=================================================== */
         .cursor {
             position: fixed;
             width: 12px;
@@ -82,7 +76,7 @@
             z-index: 99999;
             transform: translate(-50%, -50%);
             transition: width .2s, height .2s, background .2s;
-            mix-blend-mode: exclusion;
+            mix-blend-mode: exclusion
         }
 
         .cursor-ring {
@@ -94,24 +88,21 @@
             pointer-events: none;
             z-index: 99998;
             transform: translate(-50%, -50%);
-            transition: width .3s, height .3s, opacity .3s;
+            transition: width .3s, height .3s, opacity .3s
         }
 
         .cursor.big {
             width: 20px;
             height: 20px;
-            background: #fff;
+            background: #fff
         }
 
         .cursor-ring.big {
             width: 60px;
             height: 60px;
-            opacity: .4;
+            opacity: .4
         }
 
-        /* ===================================================
-   GRAIN
-=================================================== */
         .grain {
             position: fixed;
             inset: -50%;
@@ -121,7 +112,7 @@
             z-index: 9990;
             opacity: .035;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-            animation: grain .4s steps(1) infinite;
+            animation: grain .4s steps(1) infinite
         }
 
         @keyframes grain {
@@ -142,15 +133,12 @@
             }
         }
 
-        /* ===================================================
-   GLOW BLOBS
-=================================================== */
         .glow-wrap {
             position: fixed;
             inset: 0;
             pointer-events: none;
             z-index: 0;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .blob {
@@ -158,7 +146,7 @@
             border-radius: 50%;
             filter: blur(120px);
             opacity: .18;
-            animation: drift 12s ease-in-out infinite;
+            animation: drift 12s ease-in-out infinite
         }
 
         .b1 {
@@ -167,7 +155,7 @@
             background: var(--accent2);
             top: -200px;
             left: -200px;
-            animation-duration: 14s;
+            animation-duration: 14s
         }
 
         .b2 {
@@ -177,7 +165,7 @@
             bottom: -200px;
             right: -100px;
             animation-duration: 11s;
-            animation-delay: -5s;
+            animation-delay: -5s
         }
 
         .b3 {
@@ -188,7 +176,7 @@
             left: 40%;
             animation-duration: 9s;
             animation-delay: -3s;
-            opacity: .08;
+            opacity: .08
         }
 
         @keyframes drift {
@@ -207,13 +195,10 @@
             }
         }
 
-        /* ===================================================
-   LAYOUT
-=================================================== */
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 48px;
+            padding: 0 48px
         }
 
         .section-label {
@@ -225,7 +210,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 18px;
+            margin-bottom: 18px
         }
 
         .section-label::before {
@@ -233,12 +218,9 @@
             display: block;
             width: 24px;
             height: 1px;
-            background: var(--accent);
+            background: var(--accent)
         }
 
-        /* ===================================================
-   NAVBAR
-=================================================== */
         .navbar {
             position: fixed;
             top: 0;
@@ -249,25 +231,25 @@
             align-items: center;
             justify-content: space-between;
             padding: 22px 48px;
-            transition: all .4s;
+            transition: all .4s
         }
 
         .navbar.scrolled {
             background: rgba(8, 8, 16, .92);
             backdrop-filter: blur(20px);
             padding: 14px 48px;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border)
         }
 
         .nav-logo {
             font-family: var(--display);
             font-size: 1.9rem;
-            letter-spacing: 3px;
+            letter-spacing: 3px
         }
 
         .nav-logo em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .nav-logo .ldot {
@@ -279,7 +261,7 @@
             margin-left: 3px;
             margin-bottom: 2px;
             animation: blink 2s infinite;
-            vertical-align: middle;
+            vertical-align: middle
         }
 
         @keyframes blink {
@@ -298,7 +280,7 @@
             display: flex;
             align-items: center;
             gap: 36px;
-            list-style: none;
+            list-style: none
         }
 
         .nav-links a {
@@ -307,7 +289,7 @@
             color: var(--muted);
             letter-spacing: .4px;
             position: relative;
-            transition: color .2s;
+            transition: color .2s
         }
 
         .nav-links a::after {
@@ -318,15 +300,15 @@
             width: 0;
             height: 1px;
             background: var(--accent);
-            transition: width .3s;
+            transition: width .3s
         }
 
         .nav-links a:hover {
-            color: var(--text);
+            color: var(--text)
         }
 
         .nav-links a:hover::after {
-            width: 100%;
+            width: 100%
         }
 
         .nav-cta {
@@ -343,13 +325,13 @@
             border-radius: 50px;
             border: none;
             transition: all .3s;
-            box-shadow: 0 0 20px rgba(0, 229, 255, .3);
+            box-shadow: 0 0 20px rgba(0, 229, 255, .3)
         }
 
         .nav-cta:hover {
             background: #fff;
             box-shadow: 0 0 40px rgba(0, 229, 255, .5);
-            transform: translateY(-2px);
+            transform: translateY(-2px)
         }
 
         .hamburger {
@@ -362,12 +344,9 @@
             border-radius: 8px;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.1rem
         }
 
-        /* ===================================================
-   STICKY SOCIAL
-=================================================== */
         .sticky-social {
             position: fixed;
             right: 22px;
@@ -376,7 +355,7 @@
             z-index: 990;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 8px
         }
 
         .sticky-social a {
@@ -392,7 +371,7 @@
             color: var(--muted);
             font-size: .9rem;
             transition: all .3s;
-            position: relative;
+            position: relative
         }
 
         .sticky-social a::before {
@@ -411,65 +390,62 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity .2s, transform .2s;
-            transform: translateX(6px);
+            transform: translateX(6px)
         }
 
         .sticky-social a:hover::before {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateX(0)
         }
 
         .sticky-social a:hover {
-            transform: translateX(-4px);
+            transform: translateX(-4px)
         }
 
         .ss-wa:hover {
             background: #25d366;
             border-color: #25d366;
-            color: #fff;
+            color: #fff
         }
 
         .ss-ig:hover {
             background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366);
             border-color: transparent;
-            color: #fff;
+            color: #fff
         }
 
         .ss-fb:hover {
             background: #1877f2;
             border-color: #1877f2;
-            color: #fff;
+            color: #fff
         }
 
         .ss-li:hover {
             background: #0a66c2;
             border-color: #0a66c2;
-            color: #fff;
+            color: #fff
         }
 
         .ss-yt:hover {
             background: #ff0000;
             border-color: #ff0000;
-            color: #fff;
+            color: #fff
         }
 
-        /* ===================================================
-   HERO
-=================================================== */
         .hero {
             min-height: 100vh;
             position: relative;
             display: flex;
             align-items: center;
             padding: 120px 0 80px;
-            z-index: 1;
+            z-index: 1
         }
 
         .hero-inner {
             display: grid;
             grid-template-columns: 1fr 400px;
             gap: 64px;
-            align-items: center;
+            align-items: center
         }
 
         .hero-badge {
@@ -487,7 +463,7 @@
             border-radius: 50px;
             margin-bottom: 28px;
             opacity: 0;
-            animation: slideUp .8s .2s forwards;
+            animation: slideUp .8s .2s forwards
         }
 
         .pdot {
@@ -495,7 +471,7 @@
             height: 7px;
             background: var(--green);
             border-radius: 50%;
-            animation: blink 1.5s infinite;
+            animation: blink 1.5s infinite
         }
 
         .hero-h1 {
@@ -505,14 +481,14 @@
             letter-spacing: 2px;
             opacity: 0;
             animation: slideUp .8s .35s forwards;
-            margin-bottom: 26px;
+            margin-bottom: 26px
         }
 
         .hero-h1 .accent-line {
             display: block;
             color: transparent;
             -webkit-text-stroke: 1.5px var(--accent);
-            letter-spacing: 4px;
+            letter-spacing: 4px
         }
 
         .hero-h1 .small-line {
@@ -522,7 +498,7 @@
             color: var(--muted);
             font-family: var(--body);
             font-weight: 300;
-            margin-bottom: 10px;
+            margin-bottom: 10px
         }
 
         .hero-p {
@@ -532,12 +508,12 @@
             max-width: 500px;
             margin-bottom: 38px;
             opacity: 0;
-            animation: slideUp .8s .5s forwards;
+            animation: slideUp .8s .5s forwards
         }
 
         .hero-p strong {
             color: var(--text);
-            font-weight: 600;
+            font-weight: 600
         }
 
         .hero-btns {
@@ -546,7 +522,7 @@
             flex-wrap: wrap;
             opacity: 0;
             animation: slideUp .8s .65s forwards;
-            margin-bottom: 56px;
+            margin-bottom: 56px
         }
 
         .btn-prim {
@@ -563,13 +539,13 @@
             border-radius: 50px;
             border: none;
             transition: all .3s;
-            box-shadow: 0 0 28px rgba(0, 229, 255, .3);
+            box-shadow: 0 0 28px rgba(0, 229, 255, .3)
         }
 
         .btn-prim:hover {
             background: #fff;
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(0, 229, 255, .4);
+            box-shadow: 0 10px 40px rgba(0, 229, 255, .4)
         }
 
         .btn-out {
@@ -583,13 +559,13 @@
             padding: 14px 32px;
             border-radius: 50px;
             border: 1px solid var(--border2);
-            transition: all .3s;
+            transition: all .3s
         }
 
         .btn-out:hover {
             border-color: var(--accent);
             color: var(--accent);
-            transform: translateY(-3px);
+            transform: translateY(-3px)
         }
 
         .hero-stats {
@@ -597,18 +573,18 @@
             gap: 36px;
             flex-wrap: wrap;
             opacity: 0;
-            animation: slideUp .8s .8s forwards;
+            animation: slideUp .8s .8s forwards
         }
 
         .hs-num {
             font-family: var(--display);
             font-size: 2.8rem;
             line-height: 1;
-            color: var(--text);
+            color: var(--text)
         }
 
         .hs-num span {
-            color: var(--accent);
+            color: var(--accent)
         }
 
         .hs-label {
@@ -616,10 +592,9 @@
             color: var(--muted);
             letter-spacing: 1px;
             text-transform: uppercase;
-            margin-top: 3px;
+            margin-top: 3px
         }
 
-        /* hero right trust card */
         .hero-card {
             background: var(--card);
             border: 1px solid var(--border);
@@ -628,7 +603,7 @@
             position: relative;
             overflow: hidden;
             opacity: 0;
-            animation: slideRight .9s .5s forwards;
+            animation: slideRight .9s .5s forwards
         }
 
         .hero-card::before {
@@ -636,7 +611,7 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(135deg, rgba(0, 229, 255, .05), transparent 60%);
-            pointer-events: none;
+            pointer-events: none
         }
 
         .hc-label {
@@ -648,21 +623,21 @@
             margin-bottom: 22px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 10px
         }
 
         .hc-label::after {
             content: '';
             flex: 1;
             height: 1px;
-            background: var(--border);
+            background: var(--border)
         }
 
         .hc-percent {
             text-align: center;
             padding: 24px 0;
             border-bottom: 1px solid var(--border);
-            margin-bottom: 22px;
+            margin-bottom: 22px
         }
 
         .hc-big {
@@ -673,7 +648,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: 2px;
+            letter-spacing: 2px
         }
 
         .hc-sublabel {
@@ -681,20 +656,20 @@
             color: var(--muted);
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-top: 5px;
+            margin-top: 5px
         }
 
         .hc-subsub {
             font-size: .9rem;
             color: var(--text);
             font-weight: 600;
-            margin-top: 4px;
+            margin-top: 4px
         }
 
         .hc-items {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 10px
         }
 
         .hc-item {
@@ -707,11 +682,11 @@
             border-radius: 8px;
             font-size: .83rem;
             color: var(--text);
-            transition: border-color .2s;
+            transition: border-color .2s
         }
 
         .hc-item:hover {
-            border-color: rgba(0, 229, 255, .25);
+            border-color: rgba(0, 229, 255, .25)
         }
 
         .hc-ic {
@@ -722,32 +697,29 @@
             align-items: center;
             justify-content: center;
             font-size: .8rem;
-            flex-shrink: 0;
+            flex-shrink: 0
         }
 
         .ic-g {
             background: rgba(0, 214, 143, .15);
-            color: var(--green);
+            color: var(--green)
         }
 
         .ic-b {
             background: rgba(0, 229, 255, .12);
-            color: var(--accent);
+            color: var(--accent)
         }
 
         .ic-y {
             background: rgba(244, 197, 66, .12);
-            color: var(--gold);
+            color: var(--gold)
         }
 
         .ic-r {
             background: rgba(255, 77, 109, .12);
-            color: var(--red);
+            color: var(--red)
         }
 
-        /* ===================================================
-   MARQUEE
-=================================================== */
         .marquee-wrap {
             background: var(--surface);
             border-top: 1px solid var(--border);
@@ -755,13 +727,13 @@
             padding: 14px 0;
             overflow: hidden;
             position: relative;
-            z-index: 1;
+            z-index: 1
         }
 
         .marquee-track {
             display: flex;
             animation: marquee 28s linear infinite;
-            width: max-content;
+            width: max-content
         }
 
         .mq-item {
@@ -773,11 +745,11 @@
             font-weight: 500;
             color: var(--muted);
             white-space: nowrap;
-            border-right: 1px solid var(--border);
+            border-right: 1px solid var(--border)
         }
 
         .mq-item i {
-            color: var(--accent);
+            color: var(--accent)
         }
 
         @keyframes marquee {
@@ -790,13 +762,10 @@
             }
         }
 
-        /* ===================================================
-   SERVICES
-=================================================== */
         .services {
             padding: 120px 0;
             position: relative;
-            z-index: 1;
+            z-index: 1
         }
 
         .services-top {
@@ -804,32 +773,32 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: end;
-            margin-bottom: 56px;
+            margin-bottom: 56px
         }
 
         .s-headline {
             font-family: var(--display);
             font-size: clamp(2.8rem, 5vw, 5rem);
             line-height: .93;
-            letter-spacing: 1px;
+            letter-spacing: 1px
         }
 
         .s-headline em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .s-desc {
             color: var(--muted);
             font-size: .93rem;
             line-height: 1.75;
-            align-self: flex-end;
+            align-self: flex-end
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
+            gap: 16px
         }
 
         .svc-card {
@@ -840,7 +809,7 @@
             position: relative;
             overflow: hidden;
             transition: all .4s cubic-bezier(.25, .8, .25, 1);
-            cursor: pointer;
+            cursor: pointer
         }
 
         .svc-card::after {
@@ -853,17 +822,17 @@
             background: linear-gradient(90deg, var(--accent), var(--accent2));
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform .4s;
+            transition: transform .4s
         }
 
         .svc-card:hover {
             transform: translateY(-8px);
             border-color: rgba(0, 229, 255, .2);
-            background: #181828;
+            background: #181828
         }
 
         .svc-card:hover::after {
-            transform: scaleX(1);
+            transform: scaleX(1)
         }
 
         .svc-num {
@@ -871,7 +840,7 @@
             font-size: .72rem;
             letter-spacing: 3px;
             color: var(--muted);
-            margin-bottom: 18px;
+            margin-bottom: 18px
         }
 
         .svc-icon {
@@ -883,47 +852,47 @@
             justify-content: center;
             font-size: 1.35rem;
             margin-bottom: 20px;
-            transition: transform .3s;
+            transition: transform .3s
         }
 
         .svc-card:hover .svc-icon {
-            transform: scale(1.1) rotate(-5deg);
+            transform: scale(1.1) rotate(-5deg)
         }
 
         .svi-1 {
-            background: rgba(124, 58, 237, .2);
+            background: rgba(124, 58, 237, .2)
         }
 
         .svi-2 {
-            background: rgba(0, 229, 255, .15);
+            background: rgba(0, 229, 255, .15)
         }
 
         .svi-3 {
-            background: rgba(255, 107, 53, .15);
+            background: rgba(255, 107, 53, .15)
         }
 
         .svi-4 {
-            background: rgba(0, 214, 143, .15);
+            background: rgba(0, 214, 143, .15)
         }
 
         .svc-title {
             font-family: var(--display);
             font-size: 1.35rem;
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 10px
         }
 
         .svc-desc {
             font-size: .83rem;
             color: var(--muted);
             line-height: 1.7;
-            margin-bottom: 18px;
+            margin-bottom: 18px
         }
 
         .svc-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 6px
         }
 
         .svc-tag {
@@ -934,17 +903,14 @@
             background: rgba(255, 255, 255, .04);
             border: 1px solid var(--border);
             padding: 3px 10px;
-            border-radius: 50px;
+            border-radius: 50px
         }
 
-        /* ===================================================
-   WORKS
-=================================================== */
         .works {
             padding: 120px 0;
             background: var(--surface);
             position: relative;
-            z-index: 1;
+            z-index: 1
         }
 
         .works-top {
@@ -953,19 +919,19 @@
             justify-content: space-between;
             margin-bottom: 48px;
             gap: 20px;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
         .w-headline {
             font-family: var(--display);
             font-size: clamp(2.8rem, 5vw, 5rem);
             line-height: .93;
-            letter-spacing: 1px;
+            letter-spacing: 1px
         }
 
         .w-headline em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .view-all {
@@ -981,28 +947,28 @@
             padding: 12px 24px;
             border-radius: 50px;
             transition: all .3s;
-            white-space: nowrap;
+            white-space: nowrap
         }
 
         .view-all:hover {
             border-color: var(--accent);
             color: var(--accent);
-            padding-right: 30px;
+            padding-right: 30px
         }
 
         .view-all i {
-            transition: transform .3s;
+            transition: transform .3s
         }
 
         .view-all:hover i {
-            transform: translateX(4px);
+            transform: translateX(4px)
         }
 
         .works-tabs {
             display: flex;
             gap: 8px;
             margin-bottom: 34px;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
         .w-tab {
@@ -1016,20 +982,20 @@
             text-transform: uppercase;
             padding: 8px 18px;
             border-radius: 50px;
-            transition: all .2s;
+            transition: all .2s
         }
 
         .w-tab:hover,
         .w-tab.active {
             background: var(--accent);
             border-color: var(--accent);
-            color: #000;
+            color: #000
         }
 
         .works-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
+            gap: 18px
         }
 
         .work-card {
@@ -1038,19 +1004,19 @@
             border-radius: var(--rmd);
             overflow: hidden;
             transition: all .4s;
-            cursor: pointer;
+            cursor: pointer
         }
 
         .work-card:hover {
             transform: translateY(-10px);
             border-color: rgba(0, 229, 255, .25);
-            box-shadow: 0 24px 60px rgba(0, 0, 0, .6);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .6)
         }
 
         .wk-thumb {
             height: 200px;
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .wk-bg {
@@ -1060,27 +1026,11 @@
             align-items: center;
             justify-content: center;
             font-size: 3.5rem;
-            transition: transform .6s cubic-bezier(.25, .8, .25, 1);
+            transition: transform .6s cubic-bezier(.25, .8, .25, 1)
         }
 
         .work-card:hover .wk-bg {
-            transform: scale(1.12);
-        }
-
-        .wbg1 {
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-        }
-
-        .wbg2 {
-            background: linear-gradient(135deg, #134e5e, #71b280);
-        }
-
-        .wbg3 {
-            background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
-        }
-
-        .wbg4 {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            transform: scale(1.12)
         }
 
         .wk-overlay {
@@ -1092,11 +1042,11 @@
             align-items: center;
             justify-content: center;
             opacity: 0;
-            transition: opacity .3s;
+            transition: opacity .3s
         }
 
         .work-card:hover .wk-overlay {
-            opacity: 1;
+            opacity: 1
         }
 
         .wk-btn {
@@ -1113,14 +1063,16 @@
             border-radius: 50px;
             transform: translateY(10px);
             transition: transform .3s;
+            border: none;
+            cursor: pointer
         }
 
         .work-card:hover .wk-btn {
-            transform: translateY(0);
+            transform: translateY(0)
         }
 
         .wk-info {
-            padding: 20px 18px;
+            padding: 20px 18px
         }
 
         .wk-cat {
@@ -1129,36 +1081,33 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 7px;
+            margin-bottom: 7px
         }
 
         .wk-title {
             font-family: var(--display);
             font-size: 1.1rem;
             letter-spacing: .5px;
-            margin-bottom: 5px;
+            margin-bottom: 5px
         }
 
         .wk-desc {
             font-size: .8rem;
             color: var(--muted);
-            line-height: 1.5;
+            line-height: 1.5
         }
 
-        /* ===================================================
-   WHY ME
-=================================================== */
         .why {
             padding: 120px 0;
             position: relative;
-            z-index: 1;
+            z-index: 1
         }
 
         .why-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
-            align-items: center;
+            align-items: center
         }
 
         .why-headline {
@@ -1166,25 +1115,25 @@
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             line-height: .93;
             letter-spacing: 1px;
-            margin-bottom: 18px;
+            margin-bottom: 18px
         }
 
         .why-headline em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .why-intro {
             color: var(--muted);
             font-size: .93rem;
             line-height: 1.75;
-            margin-bottom: 40px;
+            margin-bottom: 40px
         }
 
         .why-feats {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 12px
         }
 
         .wf {
@@ -1195,12 +1144,12 @@
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 10px;
-            transition: all .3s;
+            transition: all .3s
         }
 
         .wf:hover {
             border-color: rgba(0, 229, 255, .25);
-            transform: translateX(8px);
+            transform: translateX(8px)
         }
 
         .wf-ic {
@@ -1211,47 +1160,46 @@
             align-items: center;
             justify-content: center;
             font-size: .95rem;
-            flex-shrink: 0;
+            flex-shrink: 0
         }
 
         .wfi1 {
             background: rgba(0, 214, 143, .15);
-            color: var(--green);
+            color: var(--green)
         }
 
         .wfi2 {
             background: rgba(0, 229, 255, .12);
-            color: var(--accent);
+            color: var(--accent)
         }
 
         .wfi3 {
             background: rgba(244, 197, 66, .12);
-            color: var(--gold);
+            color: var(--gold)
         }
 
         .wfi4 {
             background: rgba(124, 58, 237, .15);
-            color: #a78bfa;
+            color: #a78bfa
         }
 
         .wfi5 {
             background: rgba(255, 77, 109, .12);
-            color: var(--red);
+            color: var(--red)
         }
 
         .wf-txt h4 {
             font-size: .9rem;
             font-weight: 700;
-            margin-bottom: 3px;
+            margin-bottom: 3px
         }
 
         .wf-txt p {
             font-size: .8rem;
             color: var(--muted);
-            line-height: 1.5;
+            line-height: 1.5
         }
 
-        /* trust card right */
         .big-trust {
             background: var(--card);
             border: 1px solid rgba(0, 229, 255, .2);
@@ -1259,7 +1207,7 @@
             padding: 42px 34px;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .big-trust::before {
@@ -1267,7 +1215,7 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(ellipse at 50% 0%, rgba(0, 229, 255, .09), transparent 60%);
-            pointer-events: none;
+            pointer-events: none
         }
 
         .bt-num {
@@ -1278,28 +1226,28 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: 2px;
+            letter-spacing: 2px
         }
 
         .bt-title {
             font-family: var(--display);
             font-size: 1.55rem;
             letter-spacing: 1px;
-            margin: 8px 0 10px;
+            margin: 8px 0 10px
         }
 
         .bt-desc {
             font-size: .88rem;
             color: var(--muted);
             line-height: 1.7;
-            margin-bottom: 28px;
+            margin-bottom: 28px
         }
 
         .trust-grid2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
-            text-align: left;
+            text-align: left
         }
 
         .tb {
@@ -1313,55 +1261,52 @@
             font-size: .78rem;
             color: var(--text);
             font-weight: 500;
-            transition: border-color .2s;
+            transition: border-color .2s
         }
 
         .tb:hover {
-            border-color: rgba(0, 229, 255, .25);
+            border-color: rgba(0, 229, 255, .25)
         }
 
         .tb i {
             color: var(--green);
             flex-shrink: 0;
-            font-size: .82rem;
+            font-size: .82rem
         }
 
-        /* ===================================================
-   TESTIMONIALS
-=================================================== */
         .testimonials {
             padding: 120px 0;
             background: var(--surface);
             position: relative;
-            z-index: 1;
+            z-index: 1
         }
 
         .test-hdr {
             text-align: center;
-            margin-bottom: 52px;
+            margin-bottom: 52px
         }
 
         .test-h2 {
             font-family: var(--display);
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 10px
         }
 
         .test-h2 em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .test-sub {
             color: var(--muted);
-            font-size: .93rem;
+            font-size: .93rem
         }
 
         .test-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            gap: 18px
         }
 
         .test-card {
@@ -1371,7 +1316,7 @@
             padding: 26px;
             transition: all .3s;
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .test-card::before {
@@ -1383,19 +1328,19 @@
             color: rgba(0, 229, 255, .06);
             font-family: Georgia, serif;
             line-height: 1;
-            pointer-events: none;
+            pointer-events: none
         }
 
         .test-card:hover {
             border-color: rgba(0, 229, 255, .2);
-            transform: translateY(-6px);
+            transform: translateY(-6px)
         }
 
         .test-stars {
             color: var(--gold);
             font-size: .82rem;
             letter-spacing: 3px;
-            margin-bottom: 12px;
+            margin-bottom: 12px
         }
 
         .test-txt {
@@ -1403,13 +1348,13 @@
             color: var(--muted);
             line-height: 1.75;
             font-style: italic;
-            margin-bottom: 22px;
+            margin-bottom: 22px
         }
 
         .test-auth {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 12px
         }
 
         .test-av {
@@ -1421,38 +1366,35 @@
             justify-content: center;
             font-family: var(--display);
             font-size: 1.05rem;
-            flex-shrink: 0;
+            flex-shrink: 0
         }
 
         .av1 {
-            background: linear-gradient(135deg, var(--accent2), #7c3aed);
+            background: linear-gradient(135deg, var(--accent2), #7c3aed)
         }
 
         .av2 {
-            background: linear-gradient(135deg, var(--accent), #00b4d8);
+            background: linear-gradient(135deg, var(--accent), #00b4d8)
         }
 
         .av3 {
-            background: linear-gradient(135deg, var(--gold), #f97316);
+            background: linear-gradient(135deg, var(--gold), #f97316)
         }
 
         .t-name {
             font-size: .86rem;
-            font-weight: 700;
+            font-weight: 700
         }
 
         .t-role {
             font-size: .72rem;
-            color: var(--muted);
+            color: var(--muted)
         }
 
-        /* ===================================================
-   CTA
-=================================================== */
         .cta-sec {
             padding: 120px 0;
             position: relative;
-            z-index: 1;
+            z-index: 1
         }
 
         .cta-box {
@@ -1462,7 +1404,7 @@
             padding: 88px 60px;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .cta-box::before {
@@ -1470,7 +1412,7 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(ellipse at 50% 100%, rgba(124, 58, 237, .15), transparent 55%);
-            pointer-events: none;
+            pointer-events: none
         }
 
         .cta-box::after {
@@ -1478,12 +1420,12 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(ellipse at 50% 0%, rgba(0, 229, 255, .1), transparent 55%);
-            pointer-events: none;
+            pointer-events: none
         }
 
         .cta-box>* {
             position: relative;
-            z-index: 1;
+            z-index: 1
         }
 
         .cta-h2 {
@@ -1491,36 +1433,33 @@
             font-size: clamp(3rem, 6vw, 6rem);
             line-height: .9;
             letter-spacing: 2px;
-            margin-bottom: 18px;
+            margin-bottom: 18px
         }
 
         .cta-h2 em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .cta-p {
             color: var(--muted);
             margin-bottom: 38px;
-            font-size: 1rem;
+            font-size: 1rem
         }
 
         .cta-btns {
             display: flex;
             gap: 14px;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
-        /* ===================================================
-   FOOTER
-=================================================== */
         footer {
             background: var(--bg);
             border-top: 1px solid var(--border);
             padding: 48px 0 30px;
             position: relative;
-            z-index: 1;
+            z-index: 1
         }
 
         .foot-row {
@@ -1529,34 +1468,34 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 24px;
-            margin-bottom: 30px;
+            margin-bottom: 30px
         }
 
         .foot-logo {
             font-family: var(--display);
             font-size: 2rem;
-            letter-spacing: 2px;
+            letter-spacing: 2px
         }
 
         .foot-logo em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .foot-nav {
             display: flex;
             gap: 26px;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
         .foot-nav a {
             font-size: .82rem;
             color: var(--muted);
-            transition: color .2s;
+            transition: color .2s
         }
 
         .foot-nav a:hover {
-            color: var(--accent);
+            color: var(--accent)
         }
 
         .foot-copy {
@@ -1564,16 +1503,14 @@
             font-size: .76rem;
             color: var(--muted);
             border-top: 1px solid var(--border);
-            padding-top: 22px;
+            padding-top: 22px
         }
 
         .foot-copy span {
-            color: var(--accent);
+            color: var(--accent)
         }
 
-        /* ===================================================
-   MODAL
-=================================================== */
+        /* ENQUIRY MODAL */
         .modal-bg {
             position: fixed;
             inset: 0;
@@ -1586,12 +1523,12 @@
             padding: 20px;
             opacity: 0;
             pointer-events: none;
-            transition: opacity .35s;
+            transition: opacity .35s
         }
 
         .modal-bg.open {
             opacity: 1;
-            pointer-events: all;
+            pointer-events: all
         }
 
         .modal {
@@ -1603,11 +1540,11 @@
             max-width: 520px;
             transform: translateY(24px) scale(.98);
             transition: transform .35s cubic-bezier(.25, .8, .25, 1);
-            position: relative;
+            position: relative
         }
 
         .modal-bg.open .modal {
-            transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1)
         }
 
         .modal-close {
@@ -1625,40 +1562,40 @@
             justify-content: center;
             font-size: .85rem;
             cursor: pointer;
-            transition: all .2s;
+            transition: all .2s
         }
 
         .modal-close:hover {
             background: rgba(255, 255, 255, .1);
-            color: var(--text);
+            color: var(--text)
         }
 
         .m-title {
             font-family: var(--display);
             font-size: 2.2rem;
             letter-spacing: 1px;
-            margin-bottom: 4px;
+            margin-bottom: 4px
         }
 
         .m-title em {
             color: var(--accent);
-            font-style: normal;
+            font-style: normal
         }
 
         .m-sub {
             color: var(--muted);
             font-size: .86rem;
-            margin-bottom: 30px;
+            margin-bottom: 30px
         }
 
         .form-row2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 14px;
+            gap: 14px
         }
 
         .f-field {
-            margin-bottom: 14px;
+            margin-bottom: 14px
         }
 
         .f-field label {
@@ -1668,7 +1605,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--muted);
-            margin-bottom: 6px;
+            margin-bottom: 6px
         }
 
         .f-field input,
@@ -1683,23 +1620,23 @@
             font-family: var(--body);
             font-size: .88rem;
             outline: none;
-            transition: border-color .2s, box-shadow .2s;
+            transition: border-color .2s, box-shadow .2s
         }
 
         .f-field input:focus,
         .f-field select:focus,
         .f-field textarea:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(0, 229, 255, .1);
+            box-shadow: 0 0 0 3px rgba(0, 229, 255, .1)
         }
 
         .f-field select option {
-            background: #13131f;
+            background: #13131f
         }
 
         .f-field textarea {
             resize: vertical;
-            min-height: 88px;
+            min-height: 88px
         }
 
         .f-submit {
@@ -1721,49 +1658,312 @@
             align-items: center;
             justify-content: center;
             gap: 9px;
-            box-shadow: 0 0 28px rgba(0, 229, 255, .3);
+            box-shadow: 0 0 28px rgba(0, 229, 255, .3)
         }
 
         .f-submit:hover {
             background: #fff;
             box-shadow: 0 0 50px rgba(0, 229, 255, .5);
-            transform: translateY(-2px);
+            transform: translateY(-2px)
         }
 
-        /* ===================================================
-   REVEAL ANIMATIONS
-=================================================== */
+        /* ===== IFRAME PREVIEW POPUP ===== */
+        .preview-bg {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .9);
+            backdrop-filter: blur(24px);
+            z-index: 9500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .4s cubic-bezier(.25, .8, .25, 1)
+        }
+
+        .preview-bg.open {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .preview-modal {
+            width: 100%;
+            max-width: 1120px;
+            height: 86vh;
+            background: var(--card);
+            border: 1px solid rgba(0, 229, 255, .22);
+            border-radius: 22px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(32px) scale(.97);
+            transition: transform .4s cubic-bezier(.25, .8, .25, 1);
+            box-shadow: 0 50px 120px rgba(0, 0, 0, .9), 0 0 0 1px rgba(0, 229, 255, .06)
+        }
+
+        .preview-bg.open .preview-modal {
+            transform: translateY(0) scale(1)
+        }
+
+        .preview-topbar {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 13px 18px;
+            background: rgba(255, 255, 255, .025);
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0
+        }
+
+        .preview-dots {
+            display: flex;
+            gap: 7px;
+            flex-shrink: 0
+        }
+
+        .preview-dots span {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%
+        }
+
+        .pd-close-dot {
+            background: #ff5f57;
+            cursor: pointer;
+            transition: opacity .2s
+        }
+
+        .pd-close-dot:hover {
+            opacity: .75
+        }
+
+        .pd-yellow {
+            background: #febc2e
+        }
+
+        .pd-green-dot {
+            background: #28c840
+        }
+
+        .preview-url-bar {
+            flex: 1;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid var(--border2);
+            border-radius: 8px;
+            padding: 7px 14px;
+            font-size: .78rem;
+            color: var(--muted);
+            font-family: monospace;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow: hidden
+        }
+
+        .preview-url-bar i {
+            color: var(--green);
+            font-size: .72rem;
+            flex-shrink: 0
+        }
+
+        .preview-url-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        .preview-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0
+        }
+
+        .pab {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 14px;
+            border-radius: 7px;
+            font-size: .74rem;
+            font-weight: 700;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .2s;
+            border: none;
+            font-family: var(--body)
+        }
+
+        .pab-open {
+            background: var(--accent);
+            color: #000
+        }
+
+        .pab-open:hover {
+            background: #fff
+        }
+
+        .pab-close-btn {
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid var(--border2);
+            color: var(--muted)
+        }
+
+        .pab-close-btn:hover {
+            background: rgba(255, 77, 109, .15);
+            border-color: var(--red);
+            color: var(--red)
+        }
+
+        .preview-body {
+            flex: 1;
+            position: relative;
+            overflow: hidden
+        }
+
+        .preview-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block
+        }
+
+        .preview-loader {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--card);
+            gap: 16px;
+            transition: opacity .5s
+        }
+
+        .preview-loader.gone {
+            opacity: 0;
+            pointer-events: none
+        }
+
+        .spin {
+            width: 46px;
+            height: 46px;
+            border: 3px solid rgba(0, 229, 255, .15);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: sp .8s linear infinite
+        }
+
+        @keyframes sp {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .loader-lbl {
+            font-size: .8rem;
+            color: var(--muted);
+            letter-spacing: 1px
+        }
+
+        .preview-blocked {
+            position: absolute;
+            inset: 0;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--card);
+            gap: 16px;
+            text-align: center;
+            padding: 48px
+        }
+
+        .preview-blocked.show {
+            display: flex
+        }
+
+        .blk-icon {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background: rgba(255, 77, 109, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            color: var(--red)
+        }
+
+        .blk-title {
+            font-family: var(--display);
+            font-size: 1.7rem;
+            letter-spacing: 1px
+        }
+
+        .blk-desc {
+            font-size: .87rem;
+            color: var(--muted);
+            max-width: 400px;
+            line-height: 1.75
+        }
+
+        .blk-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            font-size: .83rem;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            padding: 12px 28px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all .3s;
+            margin-top: 4px
+        }
+
+        .blk-btn:hover {
+            background: #fff
+        }
+
+        /* REVEAL */
         .reveal {
             opacity: 0;
             transform: translateY(34px);
-            transition: opacity .75s ease, transform .75s ease;
+            transition: opacity .75s ease, transform .75s ease
         }
 
         .reveal.in {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0)
         }
 
         .rev-l {
             opacity: 0;
             transform: translateX(-28px);
-            transition: opacity .75s ease, transform .75s ease;
+            transition: opacity .75s ease, transform .75s ease
         }
 
         .rev-l.in {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateX(0)
         }
 
         .rev-r {
             opacity: 0;
             transform: translateX(28px);
-            transition: opacity .75s ease, transform .75s ease;
+            transition: opacity .75s ease, transform .75s ease
         }
 
         .rev-r.in {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateX(0)
         }
 
         @keyframes slideUp {
@@ -1790,133 +1990,140 @@
             }
         }
 
-        /* ===================================================
-   RESPONSIVE
-=================================================== */
         @media(max-width:1100px) {
 
             .services-grid,
             .works-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr)
             }
 
             .hero-inner {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .hero-card {
-                display: none;
+                display: none
             }
 
             .why-grid {
                 grid-template-columns: 1fr;
-                gap: 44px;
+                gap: 44px
             }
 
             .services-top {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
+            }
+
+            .preview-modal {
+                max-width: 95vw;
+                height: 90vh
             }
         }
 
         @media(max-width:768px) {
             .container {
-                padding: 0 22px;
+                padding: 0 22px
             }
 
             .navbar {
-                padding: 16px 22px;
+                padding: 16px 22px
             }
 
             .navbar.scrolled {
-                padding: 12px 22px;
+                padding: 12px 22px
             }
 
             .nav-links,
             .nav-cta {
-                display: none;
+                display: none
             }
 
             .hamburger {
-                display: flex;
+                display: flex
             }
 
             .test-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .services-grid,
             .works-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .trust-grid2 {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .form-row2 {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .modal {
-                padding: 30px 22px;
+                padding: 30px 22px
             }
 
             .cta-box {
-                padding: 60px 26px;
+                padding: 60px 26px
             }
 
             .sticky-social {
-                right: 8px;
+                right: 8px
             }
 
             .sticky-social a {
                 width: 36px;
                 height: 36px;
-                font-size: .8rem;
+                font-size: .8rem
             }
 
             .sticky-social a::before {
-                display: none;
+                display: none
             }
 
             .foot-row {
                 flex-direction: column;
-                text-align: center;
+                text-align: center
             }
 
             .foot-nav {
-                justify-content: center;
+                justify-content: center
             }
 
             body {
-                cursor: auto;
+                cursor: auto
             }
 
             .cursor,
             .cursor-ring {
-                display: none;
+                display: none
+            }
+
+            .preview-modal {
+                height: 82vh;
+                border-radius: 12px
+            }
+
+            .pab-open span {
+                display: none
             }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- Custom Cursor -->
     <div class="cursor" id="cur"></div>
     <div class="cursor-ring" id="curRing"></div>
-    <!-- Grain -->
     <div class="grain"></div>
-    <!-- Glows -->
     <div class="glow-wrap">
         <div class="blob b1"></div>
         <div class="blob b2"></div>
         <div class="blob b3"></div>
     </div>
 
-    <!-- ===================== NAVBAR ===================== -->
+    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
-        <a href="#" class="nav-logo">KUSHI<em>DIGITAL</em><span class="ldot"></span></a>
+        <a href="#" class="nav-logo">PULI<em>DIGITAL</em><span class="ldot"></span></a>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#works">Works</a></li>
@@ -1928,25 +2135,27 @@
         <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
     </nav>
 
-    <!-- ===================== STICKY SOCIAL ===================== -->
+    <!-- STICKY SOCIAL -->
     <div class="sticky-social">
-        <a href="https://wa.me/YOURNUMBER" target="_blank" class="ss-wa" data-label="WhatsApp"><i
+        <a href="https://wa.me/+919703065715" target="_blank" class="ss-wa" data-label="WhatsApp"><i
                 class="fab fa-whatsapp"></i></a>
-        <a href="https://instagram.com/YOURHANDLE" target="_blank" class="ss-ig" data-label="Instagram"><i
+        <a href="tel:9703065715" class="ss-call" data-label="+919703065715">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <!-- <a href="https://instagram.com/YOURHANDLE" target="_blank" class="ss-ig" data-label="Instagram"><i
                 class="fab fa-instagram"></i></a>
         <a href="https://facebook.com/YOURPAGE" target="_blank" class="ss-fb" data-label="Facebook"><i
                 class="fab fa-facebook-f"></i></a>
         <a href="https://linkedin.com/in/YOURPROFILE" target="_blank" class="ss-li" data-label="LinkedIn"><i
                 class="fab fa-linkedin-in"></i></a>
         <a href="https://youtube.com/YOURCHANNEL" target="_blank" class="ss-yt" data-label="YouTube"><i
-                class="fab fa-youtube"></i></a>
+                class="fab fa-youtube"></i></a> -->
     </div>
 
-    <!-- ===================== HERO ===================== -->
+    <!-- HERO -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-inner">
-                <!-- left -->
                 <div>
                     <div class="hero-badge"><span class="pdot"></span> Available for New Projects</div>
                     <h1 class="hero-h1">
@@ -1982,7 +2191,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- right trust card -->
                 <div class="hero-card">
                     <div class="hc-label">Live Trust Score</div>
                     <div class="hc-percent">
@@ -2009,7 +2217,7 @@
         </div>
     </section>
 
-    <!-- ===================== MARQUEE ===================== -->
+    <!-- MARQUEE -->
     <div class="marquee-wrap">
         <div class="marquee-track">
             <div class="mq-item"><i class="fas fa-check-circle"></i>99% On-Time Delivery</div>
@@ -2020,7 +2228,6 @@
             <div class="mq-item"><i class="fas fa-layer-group"></i>All-in-One Services</div>
             <div class="mq-item"><i class="fas fa-star"></i>5-Star Rated</div>
             <div class="mq-item"><i class="fas fa-handshake"></i>Long-Term Partner</div>
-            <!-- duplicate for seamless loop -->
             <div class="mq-item"><i class="fas fa-check-circle"></i>99% On-Time Delivery</div>
             <div class="mq-item"><i class="fas fa-shield-alt"></i>Confidential &amp; Secure</div>
             <div class="mq-item"><i class="fas fa-headset"></i>24/7 Support</div>
@@ -2032,7 +2239,7 @@
         </div>
     </div>
 
-    <!-- ===================== SERVICES ===================== -->
+    <!-- SERVICES -->
     <section class="services" id="services">
         <div class="container">
             <div class="services-top reveal">
@@ -2087,7 +2294,7 @@
         </div>
     </section>
 
-    <!-- ===================== WORKS ===================== -->
+    <!-- WORKS -->
     <section class="works" id="works">
         <div class="container">
             <div class="works-top">
@@ -2099,85 +2306,94 @@
             </div>
             <div class="works-tabs reveal">
                 <button class="w-tab active" onclick="filterWork(this,'all')">All</button>
-                <button class="w-tab" onclick="filterWork(this,'web')">Web Dev</button>
+                <!-- <button class="w-tab" onclick="filterWork(this,'web')">Web Dev</button>
                 <button class="w-tab" onclick="filterWork(this,'design')">Design</button>
                 <button class="w-tab" onclick="filterWork(this,'video')">Video</button>
-                <button class="w-tab" onclick="filterWork(this,'marketing')">Marketing</button>
+                <button class="w-tab" onclick="filterWork(this,'marketing')">Marketing</button> -->
             </div>
             <div class="works-grid" id="worksGrid">
+
+
+
                 <div class="work-card reveal" data-cat="web">
                     <div class="wk-thumb">
-                        <div class="wk-bg">
-                            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                alt="E-Commerce Fashion Store">
+                        <div class="wk-bg"><img src="images/Screenshot 2026-02-27 104245.png" alt="Personal Brand">
                         </div>
                         <div class="wk-overlay">
-                            <div class="wk-btn">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </div>
+                            <button class="wk-btn"
+                                onclick="openPreview('https://thepunitshah.com/','thepunitshah.com')">
+                                <i class="fas fa-eye"></i> View Project
+                            </button>
                         </div>
                     </div>
                     <div class="wk-info">
                         <div class="wk-cat">Web Development</div>
-                        <div class="wk-title">E-Commerce Fashion Store</div>
-                        <p class="wk-desc">
-                            Full responsive site with cart, payment integration & CMS backend.
-                        </p>
+                        <div class="wk-title">Business &amp; Personal Brand Website</div>
+                        <p class="wk-desc">Responsive website featuring ventures showcase, insights/blog system, media
+                            highlights and contact functionality.</p>
                     </div>
                 </div>
-                <div class="work-card reveal" data-cat="design">
-                    <div class="wk-thumb">
-                        <div class="wk-bg">
-                            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                alt="E-Commerce Fashion Store">
-                        </div>
-                        <div class="wk-overlay">
-                            <div class="wk-btn"><i class="fas fa-external-link-alt"></i>View Project</div>
-                        </div>
-                    </div>
-                    <div class="wk-info">
-                        <div class="wk-cat">Graphic Design</div>
-                        <div class="wk-title">Startup Brand Identity</div>
-                        <p class="wk-desc">Logo, brand guidelines, business card &amp; full social media kit.</p>
-                    </div>
-                </div>
+
                 <div class="work-card reveal" data-cat="video">
                     <div class="wk-thumb">
-                        <div class="wk-bg">
-                            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                alt="E-Commerce Fashion Store">
+                        <div class="wk-bg"><img src="images/Screenshot 2026-02-27 104326.png" alt="Health & Wellness">
                         </div>
                         <div class="wk-overlay">
-                            <div class="wk-btn"><i class="fas fa-external-link-alt"></i>View Project</div>
+                            <button class="wk-btn" onclick="openPreview('https://hnh.ug/','hnh.ug')">
+                                <i class="fas fa-eye"></i> View Project
+                            </button>
                         </div>
                     </div>
                     <div class="wk-info">
-                        <div class="wk-cat">Video Editing</div>
-                        <div class="wk-title">FMCG Product Ad Film</div>
-                        <p class="wk-desc">60-sec promo with motion graphics, sound design &amp; color grade.</p>
+                        <div class="wk-cat">Web Development</div>
+                        <div class="wk-title">Health &amp; Wellness Product Website</div>
+                        <p class="wk-desc">Fully responsive website with product catalog, online ordering, wellness
+                            information, and customer contact integration.</p>
                     </div>
                 </div>
+
                 <div class="work-card reveal" data-cat="marketing">
                     <div class="wk-thumb">
-                        <div class="wk-bg">
-                            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                alt="E-Commerce Fashion Store">
+                        <div class="wk-bg"><img src="images/Screenshot 2026-02-27 104426.png" alt="Hotel & Hospitality">
                         </div>
                         <div class="wk-overlay">
-                            <div class="wk-btn"><i class="fas fa-external-link-alt"></i>View Project</div>
+                            <button class="wk-btn" onclick="openPreview('https://khotels.ug/','khotels.ug')">
+                                <i class="fas fa-eye"></i> View Project
+                            </button>
                         </div>
                     </div>
                     <div class="wk-info">
-                        <div class="wk-cat">Digital Marketing</div>
-                        <div class="wk-title">Meta Ads — 4× ROAS</div>
-                        <p class="wk-desc">Full-funnel campaign: creatives, targeting, copy &amp; weekly reporting.</p>
+                        <div class="wk-cat">Web Development</div>
+                        <div class="wk-title">Hotel &amp; Hospitality Website</div>
+                        <p class="wk-desc">Fully responsive hotel website with room listings, amenities showcase,
+                            event/conference information, and online booking inquiry integration.</p>
+                    </div>
+                </div>
+
+
+                <div class="work-card reveal" data-cat="design">
+                    <div class="wk-thumb">
+                        <div class="wk-bg"><img src="images/Screenshot 2026-02-27 104210.png" alt="Travel & Tourism">
+                        </div>
+                        <div class="wk-overlay">
+                            <button class="wk-btn"
+                                onclick="openPreview('https://cityonetours.com/','cityonetours.com')">
+                                <i class="fas fa-eye"></i> View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="wk-info">
+                        <div class="wk-cat">Web Development</div>
+                        <div class="wk-title"></div>
+                        <p class="wk-desc">Full responsive website with tour packages, visa services, destination
+                            listings, inquiry forms, and CMS-managed content.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== WHY ME ===================== -->
+    <!-- WHY ME -->
     <section class="why" id="why">
         <div class="container">
             <div class="why-grid">
@@ -2250,7 +2466,7 @@
         </div>
     </section>
 
-    <!-- ===================== TESTIMONIALS ===================== -->
+    <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="test-hdr">
@@ -2300,7 +2516,7 @@
         </div>
     </section>
 
-    <!-- ===================== CTA ===================== -->
+    <!-- CTA -->
     <section class="cta-sec" id="contact">
         <div class="container">
             <div class="cta-box reveal">
@@ -2309,18 +2525,18 @@
                 <p class="cta-p">Drop me an enquiry and I'll get back to you within 24 hours. No commitment needed.</p>
                 <div class="cta-btns">
                     <button class="btn-prim" onclick="openModal()"><i class="fas fa-rocket"></i>Send Enquiry</button>
-                    <a href="https://wa.me/YOURNUMBER" target="_blank" class="btn-out"><i
+                    <a href="https://wa.me/+919703065715" target="_blank" class="btn-out"><i
                             class="fab fa-whatsapp"></i>WhatsApp Me</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== FOOTER ===================== -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="foot-row">
-                <div class="foot-logo">YOUR<em>NAME</em></div>
+                <div class="foot-logo">PULI<em>DIGITAL</em></div>
                 <nav class="foot-nav">
                     <a href="#services">Services</a>
                     <a href="#works">Works</a>
@@ -2330,121 +2546,261 @@
                     <a href="#" onclick="openModal();return false">Enquiry</a>
                 </nav>
             </div>
-            <div class="foot-copy">© 2025 YOURNAME — Designed &amp; Developed with <span>♥</span> by me. All rights
+            <div class="foot-copy">© 2025 PULI DIGITAL — Designed &amp; Developed with <span>♥</span> by me. All rights
                 reserved.</div>
         </div>
     </footer>
 
-    <!-- ===================== ENQUIRY MODAL ===================== -->
+    <!-- ENQUIRY MODAL -->
     <div class="modal-bg" id="modalBg" onclick="overlayClick(event)">
         <div class="modal">
-            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+
             <div class="m-title">START A <em>PROJECT</em></div>
             <p class="m-sub">Fill in the details below — I'll reply within 24 hours. 🚀</p>
-            <div class="form-row2">
-                <div class="f-field"><label>Your Name</label><input type="text" placeholder="e.g. Ravi Kumar" /></div>
-                <div class="f-field"><label>Phone / WhatsApp</label><input type="tel" placeholder="+91 99999 99999" />
+
+            <!-- Web3Forms Form Start -->
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <!-- Your Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="30cfc384-8fe4-4c7a-9858-01085571935d">
+
+                <div class="form-row2">
+                    <div class="f-field">
+                        <label>Your Name</label>
+                        <input type="text" name="name" placeholder="e.g. Ravi Kumar" required />
+                    </div>
+
+                    <div class="f-field">
+                        <label>Phone / WhatsApp</label>
+                        <input type="tel" name="phone" placeholder="+91 99999 99999" required />
+                    </div>
                 </div>
-            </div>
-            <div class="f-field"><label>Email Address</label><input type="email" placeholder="hello@youremail.com" />
-            </div>
-            <div class="f-field">
-                <label>Service Required</label>
-                <select>
-                    <option value="">Select a service...</option>
-                    <option>Web Development</option>
-                    <option>Graphic Design</option>
-                    <option>Video Editing</option>
-                    <option>Digital Marketing / Ads</option>
-                    <option>Social Media Management</option>
-                    <option>Complete Package (All Services)</option>
-                    <option>Other</option>
-                </select>
-            </div>
-            <div class="f-field"><label>Project Details</label><textarea
-                    placeholder="Tell me about your project — what you need, timeline, budget, etc."></textarea></div>
-            <button class="f-submit" id="submitBtn" onclick="submitEnquiry()"><i class="fas fa-paper-plane"></i>Send My
-                Enquiry</button>
+
+                <div class="f-field">
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="hello@youremail.com" required />
+                </div>
+
+                <div class="f-field">
+                    <label>Service Required</label>
+                    <select name="service" required>
+                        <option value="">Select a service...</option>
+                        <option>Web Development</option>
+                        <option>Graphic Design</option>
+                        <option>Video Editing</option>
+                        <option>Digital Marketing / Ads</option>
+                        <option>Social Media Management</option>
+                        <option>Complete Package (All Services)</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="f-field">
+                    <label>Project Details</label>
+                    <textarea name="message"
+                        placeholder="Tell me about your project — what you need, timeline, budget, etc."
+                        required></textarea>
+                </div>
+
+                <!-- Optional: Redirect After Submit -->
+                <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html">
+
+                <button type="submit" class="f-submit">
+                    <i class="fas fa-paper-plane"></i> Send My Enquiry
+                </button>
+
+            </form>
+            <!-- Web3Forms Form End -->
+
         </div>
     </div>
 
-    <!-- ===================== SCRIPTS ===================== -->
+    <!-- ===== IFRAME PREVIEW POPUP ===== -->
+    <div class="preview-bg" id="previewBg">
+        <div class="preview-modal">
+            <div class="preview-topbar">
+                <div class="preview-dots">
+                    <span class="pd-close-dot" onclick="closePreview()" title="Close"></span>
+                    <span class="pd-yellow"></span>
+                    <span class="pd-green-dot"></span>
+                </div>
+                <div class="preview-url-bar">
+                    <i class="fas fa-lock"></i>
+                    <span class="preview-url-text" id="previewUrl">Loading…</span>
+                </div>
+                <div class="preview-actions">
+                    <button class="pab pab-open" onclick="openInNewTab()">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Open Tab</span>
+                    </button>
+                    <button class="pab pab-close-btn" onclick="closePreview()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="preview-body">
+                <div class="preview-loader" id="previewLoader">
+                    <div class="spin"></div>
+                    <div class="loader-lbl">Loading website preview…</div>
+                </div>
+                <div class="preview-blocked" id="previewBlocked">
+                    <div class="blk-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="blk-title">Preview Restricted</div>
+                    <p class="blk-desc">This website's security settings prevent it from being embedded. Open it
+                        directly to view the full project.</p>
+                    <button class="blk-btn" onclick="openInNewTab()"><i class="fas fa-external-link-alt"></i> Open
+                        Website</button>
+                </div>
+                <iframe id="previewFrame" src="" title="Project Preview"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation-by-user-activation"></iframe>
+            </div>
+        </div>
+    </div>
+
     <script>
-        /* --- Cursor --- */
-        const cur = document.getElementById('cur');
-        const curR = document.getElementById('curRing');
+        /* CURSOR */
+        const cur = document.getElementById('cur'), curR = document.getElementById('curRing');
         let cx = 0, cy = 0, rx = 0, ry = 0;
-        document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; cur.style.left = cx + 'px'; cur.style.top = cy + 'px'; });
-        (function animR() { rx += (cx - rx) * .12; ry += (cy - ry) * .12; curR.style.left = rx + 'px'; curR.style.top = ry + 'px'; requestAnimationFrame(animR); })();
+        document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; cur.style.left = cx + 'px'; cur.style.top = cy + 'px' });
+        (function anim() { rx += (cx - rx) * .12; ry += (cy - ry) * .12; curR.style.left = rx + 'px'; curR.style.top = ry + 'px'; requestAnimationFrame(anim) })();
         document.querySelectorAll('a,button,.work-card,.svc-card').forEach(el => {
-            el.addEventListener('mouseenter', () => { cur.classList.add('big'); curR.classList.add('big'); });
-            el.addEventListener('mouseleave', () => { cur.classList.remove('big'); curR.classList.remove('big'); });
+            el.addEventListener('mouseenter', () => { cur.classList.add('big'); curR.classList.add('big') });
+            el.addEventListener('mouseleave', () => { cur.classList.remove('big'); curR.classList.remove('big') });
         });
 
-        /* --- Navbar scroll --- */
+        /* NAVBAR */
         const nav = document.getElementById('navbar');
         window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
 
-        /* --- Scroll reveal --- */
+        /* REVEAL */
         const obs = new IntersectionObserver((entries) => {
-            entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 80); obs.unobserve(e.target); } });
+            entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 80); obs.unobserve(e.target) } });
         }, { threshold: .1 });
         document.querySelectorAll('.reveal,.rev-l,.rev-r').forEach(el => obs.observe(el));
 
-        /* --- Counter --- */
+        /* COUNTER */
         function runCount(el) {
             const target = +el.dataset.target, suf = el.dataset.suf || '';
             let c = 0; const step = Math.ceil(target / 60);
-            const t = setInterval(() => {
-                c = Math.min(c + step, target);
-                el.innerHTML = c + '<span>' + suf + '</span>';
-                if (c >= target) clearInterval(t);
-            }, 18);
+            const t = setInterval(() => { c = Math.min(c + step, target); el.innerHTML = c + '<span>' + suf + '</span>'; if (c >= target) clearInterval(t) }, 18);
         }
         const cObs = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) { document.querySelectorAll('.hs-num').forEach(runCount); cObs.disconnect(); } });
+            entries.forEach(e => { if (e.isIntersecting) { document.querySelectorAll('.hs-num').forEach(runCount); cObs.disconnect() } });
         }, { threshold: .5 });
         const sts = document.querySelector('.hero-stats');
         if (sts) cObs.observe(sts);
 
-        /* --- Work filter --- */
+        /* FILTER */
         function filterWork(btn, cat) {
             document.querySelectorAll('.w-tab').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            document.querySelectorAll('.work-card').forEach(c => {
-                const show = cat === 'all' || c.dataset.cat === cat;
-                c.style.display = show ? 'block' : 'none';
-            });
+            document.querySelectorAll('.work-card').forEach(c => { c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none' });
         }
 
-        /* --- Modal --- */
-        function openModal() { document.getElementById('modalBg').classList.add('open'); document.body.style.overflow = 'hidden'; }
-        function closeModal() { document.getElementById('modalBg').classList.remove('open'); document.body.style.overflow = ''; }
-        function overlayClick(e) { if (e.target === document.getElementById('modalBg')) closeModal(); }
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+        /* ENQUIRY MODAL */
+        function openModal() { document.getElementById('modalBg').classList.add('open'); document.body.style.overflow = 'hidden' }
+        function closeModal() { document.getElementById('modalBg').classList.remove('open'); document.body.style.overflow = '' }
+        function overlayClick(e) { if (e.target === document.getElementById('modalBg')) closeModal() }
         function submitEnquiry() {
             const btn = document.getElementById('submitBtn');
             btn.innerHTML = '<i class="fas fa-check"></i> Sent! I\'ll reply within 24 hours ✓';
-            btn.style.background = '#00d68f';
-            btn.style.boxShadow = '0 0 30px rgba(0,214,143,.4)';
-            setTimeout(() => {
-                closeModal();
-                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send My Enquiry';
-                btn.style.background = ''; btn.style.boxShadow = '';
-            }, 2800);
+            btn.style.background = '#00d68f'; btn.style.boxShadow = '0 0 30px rgba(0,214,143,.4)';
+            setTimeout(() => { closeModal(); btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send My Enquiry'; btn.style.background = ''; btn.style.boxShadow = '' }, 2800);
         }
 
-        /* --- Hamburger --- */
+        /* ===== IFRAME PREVIEW POPUP ===== */
+        let previewUrl = '';
+        let loadTimer = null;
+
+        function openPreview(url, display) {
+            previewUrl = url;
+            const bg = document.getElementById('previewBg');
+            const frame = document.getElementById('previewFrame');
+            const loader = document.getElementById('previewLoader');
+            const blocked = document.getElementById('previewBlocked');
+            const urlEl = document.getElementById('previewUrl');
+
+            // Reset
+            loader.classList.remove('gone');
+            blocked.classList.remove('show');
+            frame.src = '';
+            urlEl.textContent = display || url;
+            if (loadTimer) clearTimeout(loadTimer);
+
+            bg.classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            // Give brief delay then load
+            setTimeout(() => {
+                frame.src = url;
+
+                frame.onload = () => {
+                    // Small delay to let content render
+                    setTimeout(() => {
+                        loader.classList.add('gone');
+                        // Check if the iframe actually loaded content (cross-origin = loaded, blank = blocked)
+                        try {
+                            const doc = frame.contentDocument || frame.contentWindow.document;
+                            if (!doc || doc.body.innerHTML.trim() === '') {
+                                blocked.classList.add('show');
+                            }
+                        } catch (e) {
+                            // Cross-origin page loaded successfully — don't show blocked
+                        }
+                    }, 600);
+                };
+
+                frame.onerror = () => {
+                    loader.classList.add('gone');
+                    blocked.classList.add('show');
+                };
+
+                // Hard timeout — 10s
+                loadTimer = setTimeout(() => {
+                    if (!loader.classList.contains('gone')) {
+                        loader.classList.add('gone');
+                        try {
+                            const doc = frame.contentDocument || frame.contentWindow.document;
+                            if (!doc || doc.body.innerHTML.trim() === '') blocked.classList.add('show');
+                        } catch (e) { /* cross-origin loaded fine */ }
+                    }
+                }, 10000);
+            }, 100);
+        }
+
+        function closePreview() {
+            const bg = document.getElementById('previewBg');
+            const frame = document.getElementById('previewFrame');
+            bg.classList.remove('open');
+            document.body.style.overflow = '';
+            if (loadTimer) clearTimeout(loadTimer);
+            setTimeout(() => { frame.src = ''; }, 420);
+        }
+
+        function openInNewTab() {
+            if (previewUrl) window.open(previewUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // Backdrop click
+        document.getElementById('previewBg').addEventListener('click', function (e) {
+            if (e.target === this) closePreview();
+        });
+
+        // ESC key
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') { closeModal(); closePreview() }
+        });
+
+        /* HAMBURGER */
         let mobileOpen = false;
         document.getElementById('hamburger').addEventListener('click', () => {
             const nl = document.querySelector('.nav-links');
             mobileOpen = !mobileOpen;
-            if (mobileOpen) {
-                nl.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(8,8,16,.97);padding:28px 32px;gap:22px;border-bottom:1px solid rgba(255,255,255,.07);z-index:999;';
-            } else {
-                nl.style.cssText = '';
-                nl.style.display = 'none';
-            }
+            if (mobileOpen) { nl.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(8,8,16,.97);padding:28px 32px;gap:22px;border-bottom:1px solid rgba(255,255,255,.07);z-index:999;' }
+            else { nl.style.cssText = ''; nl.style.display = 'none' }
         });
     </script>
 </body>
