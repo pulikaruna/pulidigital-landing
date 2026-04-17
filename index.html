@@ -429,30 +429,6 @@
             color: #fff;
         }
 
-        .ss-ig:hover {
-            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366);
-            border-color: transparent;
-            color: #fff;
-        }
-
-        .ss-fb:hover {
-            background: #1877f2;
-            border-color: #1877f2;
-            color: #fff;
-        }
-
-        .ss-li:hover {
-            background: #0a66c2;
-            border-color: #0a66c2;
-            color: #fff;
-        }
-
-        .ss-yt:hover {
-            background: #ff0000;
-            border-color: #ff0000;
-            color: #fff;
-        }
-
         /* ===================================================
    HERO
 =================================================== */
@@ -619,7 +595,6 @@
             margin-top: 3px;
         }
 
-        /* hero right trust card */
         .hero-card {
             background: var(--card);
             border: 1px solid var(--border);
@@ -938,7 +913,7 @@
         }
 
         /* ===================================================
-   WORKS
+   WORKS (original 4-col)
 =================================================== */
         .works {
             padding: 120px 0;
@@ -1063,6 +1038,12 @@
             transition: transform .6s cubic-bezier(.25, .8, .25, 1);
         }
 
+        .wk-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .work-card:hover .wk-bg {
             transform: scale(1.12);
         }
@@ -1143,6 +1124,317 @@
             font-size: .8rem;
             color: var(--muted);
             line-height: 1.5;
+        }
+
+        /* ===================================================
+   ★★★ PAST WORKS SECTION — 6 CARDS (3×2) ★★★
+=================================================== */
+        .past-works {
+            padding: 130px 0;
+            position: relative;
+            z-index: 1;
+            background: var(--bg);
+        }
+
+        /* Decorative top border glow */
+        .past-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .pw-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 56px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pw-headline {
+            font-family: var(--display);
+            font-size: clamp(3rem, 5.5vw, 5.5rem);
+            line-height: .88;
+            letter-spacing: 2px;
+        }
+
+        .pw-headline em {
+            color: var(--accent);
+            font-style: normal;
+        }
+
+        .pw-sub {
+            max-width: 360px;
+            color: var(--muted);
+            font-size: .9rem;
+            line-height: 1.75;
+            align-self: flex-end;
+        }
+
+        /* ── 3-column × 2-row grid ── */
+        .pw-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        /* Individual past-work card */
+        .pw-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform .45s cubic-bezier(.25, .8, .25, 1),
+                border-color .3s,
+                box-shadow .45s;
+        }
+
+        .pw-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(0, 229, 255, .28);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .65), 0 0 0 1px rgba(0, 229, 255, .08);
+        }
+
+        /* Gradient accent bar at top of each card */
+        .pw-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--card-accent, linear-gradient(90deg, var(--accent), var(--accent2)));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .4s ease;
+            z-index: 2;
+        }
+
+        .pw-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Thumbnail area */
+        .pw-thumb {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .pw-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s cubic-bezier(.25, .8, .25, 1), filter .4s;
+            filter: brightness(.9) saturate(1.05);
+        }
+
+        .pw-card:hover .pw-thumb img {
+            transform: scale(1.1);
+            filter: brightness(.75) saturate(1.2);
+        }
+
+        /* Emoji / icon fallback bg */
+        .pw-thumb-icon {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            transition: transform .7s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .pw-card:hover .pw-thumb-icon {
+            transform: scale(1.12) rotate(-4deg);
+        }
+
+        /* Overlay on hover */
+        .pw-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, .82) 100%);
+            opacity: 0;
+            transition: opacity .35s;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 20px;
+            z-index: 1;
+        }
+
+        .pw-card:hover .pw-overlay {
+            opacity: 1;
+        }
+
+        .pw-view-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            font-size: .76rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 9px 22px;
+            border-radius: 50px;
+            transform: translateY(14px);
+            transition: transform .3s .05s;
+        }
+
+        .pw-card:hover .pw-view-btn {
+            transform: translateY(0);
+        }
+
+        /* Category chip on the thumb */
+        .pw-chip {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 3;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(8, 8, 16, .82);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border2);
+            color: var(--accent);
+            font-size: .64rem;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 50px;
+        }
+
+        /* Card body */
+        .pw-body {
+            padding: 22px 22px 24px;
+        }
+
+        .pw-number {
+            font-family: var(--display);
+            font-size: .7rem;
+            letter-spacing: 3px;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .pw-title {
+            font-family: var(--display);
+            font-size: 1.25rem;
+            letter-spacing: .8px;
+            margin-bottom: 8px;
+            line-height: 1.1;
+            transition: color .2s;
+        }
+
+        .pw-card:hover .pw-title {
+            color: var(--accent);
+        }
+
+        .pw-desc {
+            font-size: .81rem;
+            color: var(--muted);
+            line-height: 1.65;
+            margin-bottom: 16px;
+        }
+
+        /* Tag row */
+        .pw-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .pw-tag {
+            font-size: .64rem;
+            font-weight: 600;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            color: var(--muted);
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 50px;
+            transition: border-color .2s, color .2s;
+        }
+
+        .pw-card:hover .pw-tag {
+            border-color: rgba(0, 229, 255, .2);
+            color: var(--text);
+        }
+
+        /* Result badge */
+        .pw-result {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .5px;
+            padding: 4px 10px;
+            border-radius: 50px;
+            margin-left: auto;
+        }
+
+        .res-green {
+            background: rgba(0, 214, 143, .12);
+            color: var(--green);
+            border: 1px solid rgba(0, 214, 143, .25);
+        }
+
+        .res-blue {
+            background: rgba(0, 229, 255, .1);
+            color: var(--accent);
+            border: 1px solid rgba(0, 229, 255, .2);
+        }
+
+        .res-gold {
+            background: rgba(244, 197, 66, .1);
+            color: var(--gold);
+            border: 1px solid rgba(244, 197, 66, .25);
+        }
+
+        .res-purple {
+            background: rgba(124, 58, 237, .15);
+            color: #a78bfa;
+            border: 1px solid rgba(124, 58, 237, .3);
+        }
+
+        .res-red {
+            background: rgba(255, 77, 109, .1);
+            color: var(--red);
+            border: 1px solid rgba(255, 77, 109, .25);
+        }
+
+        .res-orange {
+            background: rgba(255, 107, 53, .1);
+            color: #fb923c;
+            border: 1px solid rgba(255, 107, 53, .25);
+        }
+
+        .pw-footer {
+            display: flex;
+            align-items: center;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+        }
+
+        .pw-year {
+            font-size: .72rem;
+            color: var(--muted);
+            letter-spacing: 1px;
         }
 
         /* ===================================================
@@ -1251,7 +1543,6 @@
             line-height: 1.5;
         }
 
-        /* trust card right */
         .big-trust {
             background: var(--card);
             border: 1px solid rgba(0, 229, 255, .2);
@@ -1731,7 +2022,7 @@
         }
 
         /* ===================================================
-   REVEAL ANIMATIONS
+   REVEAL
 =================================================== */
         .reveal {
             opacity: 0;
@@ -1816,6 +2107,10 @@
             .services-top {
                 grid-template-columns: 1fr;
             }
+
+            .pw-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media(max-width:768px) {
@@ -1896,18 +2191,27 @@
             .cursor-ring {
                 display: none;
             }
+
+            .pw-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pw-header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .pw-sub {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- Custom Cursor -->
     <div class="cursor" id="cur"></div>
     <div class="cursor-ring" id="curRing"></div>
-    <!-- Grain -->
     <div class="grain"></div>
-    <!-- Glows -->
     <div class="glow-wrap">
         <div class="blob b1"></div>
         <div class="blob b2"></div>
@@ -1920,6 +2224,7 @@
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#works">Works</a></li>
+            <li><a href="#past-works">Past Works</a></li>
             <li><a href="#why">Why Me</a></li>
             <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -1930,23 +2235,14 @@
 
     <!-- ===================== STICKY SOCIAL ===================== -->
     <div class="sticky-social">
-        <a href="https://wa.me/97030 65715" target="_blank" class="ss-wa" data-label="WhatsApp"><i
+        <a href="https://wa.me/9703065715" target="_blank" class="ss-wa" data-label="WhatsApp"><i
                 class="fab fa-whatsapp"></i></a>
-        <!-- <a href="https://instagram.com/YOURHANDLE" target="_blank" class="ss-ig" data-label="Instagram"><i
-                class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com/YOURPAGE" target="_blank" class="ss-fb" data-label="Facebook"><i
-                class="fab fa-facebook-f"></i></a>
-        <a href="https://linkedin.com/in/YOURPROFILE" target="_blank" class="ss-li" data-label="LinkedIn"><i
-                class="fab fa-linkedin-in"></i></a>
-        <a href="https://youtube.com/YOURCHANNEL" target="_blank" class="ss-yt" data-label="YouTube"><i
-                class="fab fa-youtube"></i></a> -->
     </div>
 
     <!-- ===================== HERO ===================== -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-inner">
-                <!-- left -->
                 <div>
                     <div class="hero-badge"><span class="pdot"></span> Available for New Projects</div>
                     <h1 class="hero-h1">
@@ -1982,7 +2278,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- right trust card -->
                 <div class="hero-card">
                     <div class="hc-label">Live Trust Score</div>
                     <div class="hc-percent">
@@ -2020,7 +2315,6 @@
             <div class="mq-item"><i class="fas fa-layer-group"></i>All-in-One Services</div>
             <div class="mq-item"><i class="fas fa-star"></i>5-Star Rated</div>
             <div class="mq-item"><i class="fas fa-handshake"></i>Long-Term Partner</div>
-            <!-- duplicate for seamless loop -->
             <div class="mq-item"><i class="fas fa-check-circle"></i>99% On-Time Delivery</div>
             <div class="mq-item"><i class="fas fa-shield-alt"></i>Confidential &amp; Secure</div>
             <div class="mq-item"><i class="fas fa-headset"></i>24/7 Support</div>
@@ -2095,7 +2389,6 @@
                     <div class="section-label">Portfolio</div>
                     <h2 class="w-headline">SELECTED<br><em>WORK</em></h2>
                 </div>
-                <!-- <a href="works.html" class="view-all rev-r">View All Works <i class="fas fa-arrow-right"></i></a> -->
             </div>
             <div class="works-tabs reveal">
                 <button class="w-tab active" onclick="filterWork(this,'all')">All</button>
@@ -2107,33 +2400,21 @@
             <div class="works-grid" id="worksGrid">
                 <div class="work-card reveal" data-cat="web">
                     <div class="wk-thumb">
-                        <div class="wk-bg">
-                            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5cd898165834785.640e9bdfc72be.jpg"
-                                alt="E-Commerce Fashion Store">
-                        </div>
-                        <!-- <div class="wk-overlay">
-                            <div class="wk-btn">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </div>
-                        </div> -->
+                        <div class="wk-bg"><img
+                                src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5cd898165834785.640e9bdfc72be.jpg"
+                                alt="E-Commerce Fashion Store"></div>
                     </div>
                     <div class="wk-info">
                         <div class="wk-cat">Web Development</div>
                         <div class="wk-title">E-Commerce Fashion Store</div>
-                        <p class="wk-desc">
-                            Full responsive site with cart, payment integration & CMS backend.
-                        </p>
+                        <p class="wk-desc">Full responsive site with cart, payment integration & CMS backend.</p>
                     </div>
                 </div>
                 <div class="work-card reveal" data-cat="design">
                     <div class="wk-thumb">
-                        <div class="wk-bg">
-                            <img src="https://mycvcreator.com/administrator/postimages/67280e210b3452.98309972.jpg"
-                                alt="E-Commerce Fashion Store">
-                        </div>
-                        <!-- <div class="wk-overlay">
-                            <div class="wk-btn"><i class="fas fa-external-link-alt"></i>View Project</div>
-                        </div> -->
+                        <div class="wk-bg"><img
+                                src="https://mycvcreator.com/administrator/postimages/67280e210b3452.98309972.jpg"
+                                alt="Brand Identity"></div>
                     </div>
                     <div class="wk-info">
                         <div class="wk-cat">Graphic Design</div>
@@ -2143,13 +2424,8 @@
                 </div>
                 <div class="work-card reveal" data-cat="video">
                     <div class="wk-thumb">
-                        <div class="wk-bg">
-                            <img src="https://florafountain.com/wp-content/uploads/2024/11/FMCG.webp"
-                                alt="E-Commerce Fashion Store">
-                        </div>
-                        <!-- <div class="wk-overlay">
-                            <div class="wk-btn"><i class="fas fa-external-link-alt"></i>View Project</div>
-                        </div> -->
+                        <div class="wk-bg"><img src="https://florafountain.com/wp-content/uploads/2024/11/FMCG.webp"
+                                alt="FMCG Ad"></div>
                     </div>
                     <div class="wk-info">
                         <div class="wk-cat">Video Editing</div>
@@ -2159,13 +2435,9 @@
                 </div>
                 <div class="work-card reveal" data-cat="marketing">
                     <div class="wk-thumb">
-                        <div class="wk-bg">
-                            <img src="https://thenightmarketer.com/storage/blogs/OySs0JliyT5sWatZgB6PYyROfHH8nH514HudBClg.png"
-                                alt="E-Commerce Fashion Store">
-                        </div>
-                        <!-- <div class="wk-overlay">
-                            <div class="wk-btn"><i class="fas fa-external-link-alt"></i>View Project</div>
-                        </div> -->
+                        <div class="wk-bg"><img
+                                src="https://thenightmarketer.com/storage/blogs/OySs0JliyT5sWatZgB6PYyROfHH8nH514HudBClg.png"
+                                alt="Meta Ads"></div>
                     </div>
                     <div class="wk-info">
                         <div class="wk-cat">Digital Marketing</div>
@@ -2174,6 +2446,155 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ===================== ★ PAST WORKS — 6 CARDS (3×2) ★ ===================== -->
+    <section class="past-works" id="past-works">
+        <div class="container">
+
+            <div class="pw-header">
+                <div class="rev-l">
+                    <div class="section-label">Case Studies</div>
+                    <h2 class="pw-headline">PAST<br><em>WORKS</em></h2>
+                </div>
+                <p class="pw-sub reveal">A curated look at real projects — every one delivered on time, on budget, and
+                    beyond expectations.</p>
+            </div>
+
+            <div class="pw-grid">
+
+                <!-- Card 1 — Web Dev -->
+                <div class="pw-card reveal" style="--card-accent: linear-gradient(90deg,#00e5ff,#7c3aed);">
+                    <div class="pw-thumb">
+                        <img src="images/Gemini_Generated_Image_pwj042pwj042pwj0.png" alt="E-Commerce Platform"
+                            loading="lazy">
+                        <span class="pw-chip"><i class="fas fa-code"></i>&nbsp;Web Dev</span>
+                        <!-- <div class="pw-overlay">
+                            <div class="pw-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div>
+                        </div> -->
+                    </div>
+                    <div class="pw-body">
+                        <div class="pw-number">Project 01</div>
+                        <div class="pw-title">Cityone Tours</div>
+                        <p class="pw-desc">Full-stack responsive store with Razorpay integration, inventory CMS,
+                            wishlist, and mobile-first checkout flow.</p>
+                        <div class="pw-tags">
+                            <span class="pw-tag">React</span>
+                            <span class="pw-tag">Node.js</span>
+                            <span class="pw-tag">Razorpay</span>
+                            <span class="pw-tag">MongoDB</span>
+                        </div>
+                        <div class="pw-footer">
+                            <span class="pw-year">2024</span>
+                            <span class="pw-result res-green"><i class="fas fa-arrow-up"></i> 3× Conversions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card  2— Web Dev -->
+                <div class="pw-card reveal" style="--card-accent: linear-gradient(90deg,#00e5ff,#7c3aed);">
+                    <div class="pw-thumb">
+                        <img src="images/Gemini_Generated_Image_q7oet0q7oet0q7oe.png" alt="E-Commerce Platform"
+                            loading="lazy">
+                        <span class="pw-chip"><i class="fas fa-code"></i>&nbsp;Web Dev</span>
+                        <!-- <div class="pw-overlay">
+                            <div class="pw-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div>
+                        </div> -->
+                    </div>
+                    <div class="pw-body">
+                        <div class="pw-number">Project 02</div>
+                        <div class="pw-title">The Punitshah</div>
+                        <p class="pw-desc">thepunitshah.com appears to be a personal website/blog of Punit Shah, focused on sharing content related to digital marketing, technology, and personal insights.</p>
+                        <div class="pw-tags">
+                            <span class="pw-tag">html,</span>
+                            <span class="pw-tag">Node.js</span>
+                            <span class="pw-tag">css</span>
+                        </div>
+                        <div class="pw-footer">
+                            <span class="pw-year">2024</span>
+                            <span class="pw-result res-green"><i class="fas fa-arrow-up"></i> 3× Conversions</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card 3 — Video -->
+                <div class="pw-card reveal" style="--card-accent: linear-gradient(90deg,#00e5ff,#7c3aed);">
+                    <div class="pw-thumb">
+                        <img src="images/Screenshot 2026-04-17 180533.png" alt="E-Commerce Platform" loading="lazy">
+                        <span class="pw-chip"><i class="fas fa-code"></i>&nbsp;Web Dev</span>
+                        <!-- <div class="pw-overlay">
+                            <div class="pw-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div>
+                        </div> -->
+                    </div>
+                    <div class="pw-body">
+                        <div class="pw-number">Project 03</div>
+                        <div class="pw-title">Khotels</div>
+                        <p class="pw-desc">K Hotels is the official website of a luxury boutique hotel in Entebbe, Uganda, offering stylish rooms, dining, spa, and conference facilities.</p>
+                        <div class="pw-tags">
+                            <span class="pw-tag">Angular</span>
+
+                        </div>
+                        <div class="pw-footer">
+                            <span class="pw-year">2024</span>
+                            <span class="pw-result res-green"><i class="fas fa-arrow-up"></i> 3× Conversions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 — Meta Ads -->
+                <div class="pw-card reveal" style="--card-accent: linear-gradient(90deg,#00e5ff,#7c3aed);">
+                    <div class="pw-thumb">
+                        <img src="images/Screenshot 2026-04-17 180549.png" alt="E-Commerce Platform" loading="lazy">
+                        <span class="pw-chip"><i class="fas fa-code"></i>&nbsp;Web Dev</span>
+                        <!-- <div class="pw-overlay">
+                            <div class="pw-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div>
+                        </div> -->
+                    </div>
+                    <div class="pw-body">
+                        <div class="pw-number">Project 04</div>
+                        <div class="pw-title">YBL</div>
+                        <p class="pw-desc">hnh.ug appears to be a technical/admin web platform (dashboard) rather than a public informational website. It includes features like database creation, backup, restore,</p>
+                        <div class="pw-tags">
+                            <span class="pw-tag">WordPress</span>
+                            <span class="pw-tag">SEO</span>
+                            <span class="pw-tag">Booking Plugin</span>
+                        </div>
+                        <div class="pw-footer">
+                            <span class="pw-year">2024</span>
+                            <span class="pw-result res-green"><i class="fas fa-arrow-up"></i> 3× Conversions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 — WordPress Site -->
+                <div class="pw-card reveal" style="--card-accent: linear-gradient(90deg,#00e5ff,#7c3aed);">
+                    <div class="pw-thumb">
+                        <img src="images/Screenshot 2026-04-17 181025.png" alt="E-Commerce Platform" loading="lazy">
+                        <span class="pw-chip"><i class="fas fa-code"></i>&nbsp;Web Dev</span>
+                        <!-- <div class="pw-overlay">
+                            <div class="pw-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div>
+                        </div> -->
+                    </div>
+                    <div class="pw-body">
+                        <div class="pw-number">Project 06</div>
+                        <div class="pw-title">YBL</div>
+                        <p class="pw-desc">YBL Uganda (ybl.ug) is the official website of a Ugandan beverage company (Yuti Breweries) that produces and sells beer, spirits, and other alcoholic drinks.</p>
+                        <div class="pw-tags">
+                            <span class="pw-tag">WordPress</span>
+                            <span class="pw-tag">SEO</span>
+                            <span class="pw-tag">Booking Plugin</span>
+                        </div>
+                        <div class="pw-footer">
+                            <span class="pw-year">2024</span>
+                            <span class="pw-result res-green"><i class="fas fa-arrow-up"></i> 3× Conversions</span>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div><!-- /pw-grid -->
         </div>
     </section>
 
@@ -2309,7 +2730,7 @@
                 <p class="cta-p">Drop me an enquiry and I'll get back to you within 24 hours. No commitment needed.</p>
                 <div class="cta-btns">
                     <button class="btn-prim" onclick="openModal()"><i class="fas fa-rocket"></i>Send Enquiry</button>
-                    <a href="https://wa.me/97030 65715" target="_blank" class="btn-out"><i
+                    <a href="https://wa.me/9703065715" target="_blank" class="btn-out"><i
                             class="fab fa-whatsapp"></i>WhatsApp Me</a>
                 </div>
             </div>
@@ -2324,9 +2745,9 @@
                 <nav class="foot-nav">
                     <a href="#services">Services</a>
                     <a href="#works">Works</a>
+                    <a href="#past-works">Past Works</a>
                     <a href="#why">Why Me</a>
                     <a href="#testimonials">Reviews</a>
-                    <a href="works.html">Portfolio</a>
                     <a href="#" onclick="openModal();return false">Enquiry</a>
                 </nav>
             </div>
@@ -2336,74 +2757,56 @@
     </footer>
 
     <!-- ===================== ENQUIRY MODAL ===================== -->
-<div class="modal-bg" id="modalBg" onclick="overlayClick(event)">
-    <div class="modal">
-        <button class="modal-close" type="button" onclick="closeModal()">
-            <i class="fas fa-times"></i>
-        </button>
+    <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="893871ed-1c70-4adf-b2e9-79eeec0e2fba">
 
-        <div class="m-title">START A <em>PROJECT</em></div>
-        <p class="m-sub">Fill in the details below — I'll reply within 24 hours. 🚀</p>
+    <!-- Optional Subject -->
+    <input type="hidden" name="subject" value="New Project Enquiry from Website">
 
-        <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
+    <div class="form-row2">
+        <div class="f-field">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="e.g. Ravi Kumar" required>
+        </div>
 
-            <!-- Your Web3Forms Access Key -->
-            <input type="hidden" name="access_key" value="30cfc384-8fe4-4c7a-9858-01085571935d">
-
-            <!-- Optional Subject -->
-            <input type="hidden" name="subject" value="New Project Enquiry from Website">
-
-            <!-- Redirect after success (optional) -->
-            <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html"> -->
-
-            <div class="form-row2">
-                <div class="f-field">
-                    <label>Your Name</label>
-                    <input type="text" name="name" placeholder="e.g. Ravi Kumar" required>
-                </div>
-
-                <div class="f-field">
-                    <label>Phone / WhatsApp</label>
-                    <input type="tel" name="phone" placeholder="+91 99999 99999" required>
-                </div>
-            </div>
-
-            <div class="f-field">
-                <label>Email Address</label>
-                <input type="email" name="email" placeholder="hello@youremail.com" required>
-            </div>
-
-            <div class="f-field">
-                <label>Service Required</label>
-                <select name="service" required>
-                    <option value="">Select a service...</option>
-                    <option value="Web Development">Web Development</option>
-                    <option value="Graphic Design">Graphic Design</option>
-                    <option value="Video Editing">Video Editing</option>
-                    <option value="Digital Marketing / Ads">Digital Marketing / Ads</option>
-                    <option value="Social Media Management">Social Media Management</option>
-                    <option value="Complete Package (All Services)">Complete Package (All Services)</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-
-            <div class="f-field">
-                <label>Project Details</label>
-                <textarea
-                    name="message"
-                    placeholder="Tell me about your project — what you need, timeline, budget, etc."
-                    required></textarea>
-            </div>
-
-            <button class="f-submit" id="submitBtn" type="submit">
-                <i class="fas fa-paper-plane"></i>
-                <span>Send My Enquiry</span>
-            </button>
-
-            <p id="result" style="margin-top:15px;font-size:14px;"></p>
-        </form>
+        <div class="f-field">
+            <label>Phone / WhatsApp</label>
+            <input type="tel" name="phone" placeholder="+91 99999 99999" required>
+        </div>
     </div>
-</div>
+
+    <div class="f-field">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="hello@youremail.com" required>
+    </div>
+
+    <div class="f-field">
+        <label>Service Required</label>
+        <select name="service" required>
+            <option value="">Select a service...</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Video Editing">Video Editing</option>
+            <option value="Digital Marketing / Ads">Digital Marketing / Ads</option>
+            <option value="Social Media Management">Social Media Management</option>
+            <option value="Complete Package (All Services)">Complete Package (All Services)</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="f-field">
+        <label>Project Details</label>
+        <textarea name="message" placeholder="Tell me about your project — what you need, timeline, budget, etc." required></textarea>
+    </div>
+
+    <button class="f-submit" id="submitBtn" type="submit">
+        <i class="fas fa-paper-plane"></i>
+        <span>Send My Enquiry</span>
+    </button>
+
+    <p id="result" style="margin-top:15px;font-size:14px;"></p>
+</form>
     <!-- ===================== SCRIPTS ===================== -->
     <script>
         /* --- Cursor --- */
@@ -2412,7 +2815,7 @@
         let cx = 0, cy = 0, rx = 0, ry = 0;
         document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; cur.style.left = cx + 'px'; cur.style.top = cy + 'px'; });
         (function animR() { rx += (cx - rx) * .12; ry += (cy - ry) * .12; curR.style.left = rx + 'px'; curR.style.top = ry + 'px'; requestAnimationFrame(animR); })();
-        document.querySelectorAll('a,button,.work-card,.svc-card').forEach(el => {
+        document.querySelectorAll('a,button,.work-card,.svc-card,.pw-card').forEach(el => {
             el.addEventListener('mouseenter', () => { cur.classList.add('big'); curR.classList.add('big'); });
             el.addEventListener('mouseleave', () => { cur.classList.remove('big'); curR.classList.remove('big'); });
         });
@@ -2458,17 +2861,6 @@
         function closeModal() { document.getElementById('modalBg').classList.remove('open'); document.body.style.overflow = ''; }
         function overlayClick(e) { if (e.target === document.getElementById('modalBg')) closeModal(); }
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-        function submitEnquiry() {
-            const btn = document.getElementById('submitBtn');
-            btn.innerHTML = '<i class="fas fa-check"></i> Sent! I\'ll reply within 24 hours ✓';
-            btn.style.background = '#00d68f';
-            btn.style.boxShadow = '0 0 30px rgba(0,214,143,.4)';
-            setTimeout(() => {
-                closeModal();
-                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send My Enquiry';
-                btn.style.background = ''; btn.style.boxShadow = '';
-            }, 2800);
-        }
 
         /* --- Hamburger --- */
         let mobileOpen = false;
@@ -2478,51 +2870,38 @@
             if (mobileOpen) {
                 nl.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(8,8,16,.97);padding:28px 32px;gap:22px;border-bottom:1px solid rgba(255,255,255,.07);z-index:999;';
             } else {
-                nl.style.cssText = '';
-                nl.style.display = 'none';
+                nl.style.cssText = ''; nl.style.display = 'none';
             }
         });
+
+        /* --- Form submit --- */
         const form = document.getElementById("enquiryForm");
-const result = document.getElementById("result");
-const submitBtn = document.getElementById("submitBtn");
-
-form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-    const formData = new FormData(form);
-
-    try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
+        const result = document.getElementById("result");
+        const submitBtn = document.getElementById("submitBtn");
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            const formData = new FormData(form);
+            try {
+                const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+                const data = await response.json();
+                if (data.success) {
+                    result.style.color = "#22c55e";
+                    result.innerHTML = "✅ Your enquiry has been sent successfully!";
+                    form.reset();
+                    setTimeout(() => { closeModal(); result.innerHTML = ""; }, 2500);
+                } else {
+                    result.style.color = "#ef4444";
+                    result.innerHTML = "❌ Something went wrong. Please try again.";
+                }
+            } catch (error) {
+                result.style.color = "#ef4444";
+                result.innerHTML = "❌ Unable to send enquiry. Check your internet connection.";
+            }
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Send My Enquiry</span>';
         });
-
-        const data = await response.json();
-
-        if (data.success) {
-            result.style.color = "#22c55e";
-            result.innerHTML = "✅ Your enquiry has been sent successfully!";
-            form.reset();
-
-            setTimeout(() => {
-                closeModal();
-                result.innerHTML = "";
-            }, 2500);
-        } else {
-            result.style.color = "#ef4444";
-            result.innerHTML = "❌ Something went wrong. Please try again.";
-        }
-    } catch (error) {
-        result.style.color = "#ef4444";
-        result.innerHTML = "❌ Unable to send enquiry. Check your internet connection.";
-    }
-
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Send My Enquiry</span>';
-});
     </script>
 </body>
 
